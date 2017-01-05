@@ -1,0 +1,6 @@
+.logo img + span {
+    width: 165px;
+}
+.required::after {
+    color: red;
+}

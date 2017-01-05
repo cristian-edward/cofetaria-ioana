@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - cofetaria_ioana@192.168.10.10" uuid="ce0b77fa-785e-4726-b206-c800fe258d18">
+      <secret-storage>master_key</secret-storage>
+      <user-name>homestead</user-name>
+      <schema-pattern>cofetaria_ioana.*</schema-pattern>
+      <default-schemas>cofetaria_ioana.*</default-schemas>
+    </data-source>
+  </component>
+</project>

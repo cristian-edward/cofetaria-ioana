@@ -1,0 +1,94 @@
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span,
+.impx-header-social-list li a,
+.impx-top-header-contact li i,
+.impx-main-header .uk-navbar-nav > li.uk-active > a,
+#impx-header.uk-active .impx-main-header .uk-navbar-nav > li.uk-active > a,
+.impx-main-header .uk-navbar-nav > li:hover > a,
+.impx-main-header .uk-navbar-nav > li > a:focus,
+.impx-main-header .uk-navbar-nav > li.uk-open > a,
+#impx-header.uk-active .impx-main-header .uk-navbar-nav > li:hover > a,
+#impx-header.uk-active .impx-main-header .uk-navbar-nav > li > a:focus,
+#impx-header.uk-active .impx-main-header .uk-navbar-nav > li.uk-open > a,
+.impx-main-header .uk-nav-navbar > li > a:hover,
+.impx-main-header .uk-nav-navbar > li > a:focus,
+#impx-header.uk-active .impx-main-header .uk-nav-navbar > li > a:hover,
+#impx-header.uk-active .impx-main-header .uk-nav-navbar > li > a:focus,
+.impx-slideshow-box .impx-slideshow-caption .uk-button.outline i,
+.impx-intro h1 span,
+.impx-intro p span,
+.impx-intro-list-wrapper .uk-panel-title,
+.impx-menu-desc2 .impx-separator i,
+.impx-services-boxes .uk-panel-box i,
+.impx-service-item-content h5,
+.impx-menu-page-price h5,
+.impx-service-item.no-border .impx-service-item-content h5,
+.impx-menu-page-group .impx-menu-page-content .impx-menu-page-price h5,
+.impx-author-box h5,
+.impx-related-post h6.related-post-title a,
+.impx-comment-box h4,
+.impx-comment-form h4,
+.impx-comment-form h4,
+.impx-comment-form h4,
+.impx-sidebar-box a:hover,
+.impx-popular-news li .impx-post-meta li a,
+.impx-box-date .impx-day,
+.impx-event-place,
+.impx-event-place i,
+.impx-event-detail span,
+span.impx-product-cat,
+table.impx-calendar td a,
+.impx-upcoming-event li p,
+.impx-product-detail .impx-product-price span,
+.impx-opening-hours li span {
+    color: #c51b1b;
+}
+.impx-to-top {
+    bottom: 60px;
+    position: fixed;
+    right: 30px;
+}
+.impx-to-top i {
+    border-color: #c51b1b;
+    color: #c51b1b;
+}
+.impx-slideshow{
+    width: 100%;
+}
+.uk-icon-caret-down{
+    line-height: 35px;
+    min-height: 38px;
+    min-width: 30px;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 0;
+}
+ul.dropdown-mega-sub-nav > li > a {
+    width: 150px;
+}
+@media (max-width: 991px){
+    div.uk-width-xlarge-1-2.uk-width-large-1-2.uk-width-medium-2-3.uk-width-small-1-1.uk-margin-double-large-top {
+        margin: 0 auto;
+    }
+    div.impx-slideshow-caption.uk-text-left.uk-scrollspy-init-inview.uk-scrollspy-inview.uk-animation-slide-right {
+        text-align: center !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .uk-overlay-panel {
+        bottom: 25%;
+    }
+}
+@media (max-width: 767px) {
+    .bottom-35 {
+        position: absolute;
+        bottom: 35%;
+        left: 0;
+        right: 0;
+    }
+}

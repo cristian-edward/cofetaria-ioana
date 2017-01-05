@@ -1,0 +1,38 @@
+services:
+#    acme.demo.example:
+#        class:     Acme\DemoBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+#        calls:
+#            - [setService, ["@service_id"]]
+#        tags:
+#            - { name: twig.extension }
+#            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+    app.admin.user:
+        class: AppBundle\Admin\UserAdmin
+        tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Administration', label: "User" }
+        arguments: [~, AppBundle\Entity\Admin\User, ~]
+
+    app.admin.product:
+        class: AppBundle\Admin\ProductAdmin
+        tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Product" }
+        arguments: [~, AppBundle\Entity\Admin\Product, ~]
+
+    app.admin.category:
+        class: AppBundle\Admin\CategoryAdmin
+        tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Category" }
+        arguments: [~, AppBundle\Entity\Admin\Category, ~]
+
+    app.admin.weight:
+        class: AppBundle\Admin\WeightAdmin
+        tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Weight" }
+        arguments: [~, AppBundle\Entity\Admin\Weight, ~]
+
+    app.admin.subcategory:
+        class: AppBundle\Admin\SubcategoryAdmin
+        tags:
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Subcategory" }
+        arguments: [~, AppBundle\Entity\Admin\Subcategory, ~]

@@ -1,0 +1,23 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+#    prefix: /{_locale}
+#    path: /{_locale}/
+#    defaults: { _controller: AppBundle:Default:index }
+#    requirements:
+#        _locale: "%app.locales%"
+
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

@@ -1,0 +1,10 @@
+{% extends ':frontEnd:home.html.twig' %}
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'Acasă'|trans }}{% endblock %}
+
+    {% block content %}
+
+        {% include ':frontEnd/index:prezentareCategori.html.twig' %}
+
+    {% endblock %}

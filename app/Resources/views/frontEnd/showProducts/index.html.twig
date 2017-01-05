@@ -1,0 +1,213 @@
+{% extends ':frontEnd:home.html.twig' %}
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %} Produse {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/rating.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/price-range.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- Wrapper -->
+    <section class="impx-wrapper">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+
+                <!-- Product List -->
+                <div class="uk-width-xlarge-3-4 uk-width-large-3-4 uk-width-medium-1-1 uk-width-small-1-1 impx-main-content">
+                    <div class="impx-product-list">
+                        <ul class="uk-grid uk-grid-width-1-1 impx-products impx-product-list-style">
+
+                            <!-- Product Item 1 -->
+                            <li>
+                                <div class="impx-product-item">
+                                    <div class="uk-grid">
+                                        <div class="uk-width-xlarge-1-3 uk-width-large-1-3 uk-width-medium-1-3 uk-width-small-1-1">
+                                            <figure class="uk-overlay uk-overlay-hover">
+                                                <img class="uk-overlay-scale" src="http://placehold.it/700x700" alt="">
+                                                <figcaption class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle">
+                                                    <button class="uk-button uk-icon-shopping-cart"></button>
+                                                    <button class="uk-button uk-icon-heart-o"></button>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="uk-width-xlarge-2-3 uk-width-large-2-3 uk-width-medium-2-3 uk-width-small-1-1">
+                                            <div class="impx-product-title">
+                                                <span class="impx-product-cat"><a href="#">Main Course</a></span>
+                                                <h3><a href="">Product Title 1 Here</a></h3>
+                                                <select class="5star-rating" name="rating" id="rating">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                            <p>Duis convallis nulla augue, vel pretium quam mattis nec. Pellentesque dapibus faucibus lacus quis feugiat.</p>
+                                            <div class="impx-product-meta">
+                                                <a class="uk-button outline default" href="">$11.00<i class="uk-icon-check"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Product Item 1 End -->
+                        </ul>
+
+                        <!-- Product Pagination -->
+                        <ul class="uk-pagination">
+                            <li><a href="#"><i class="uk-icon-angle-double-left"></i></a></li>
+                            <li class="uk-active"><span>1</span></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#"><i class="uk-icon-angle-double-right"></i></a></li>
+                        </ul>
+                        <!-- Product Pagination End -->
+
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="uk-width-xlarge-1-4 uk-width-large-1-4 uk-width-medium-1-1 uk-width-small-1-1 impx-sidebar">
+
+                    <!-- Category Widget -->
+                    <div class="impx-sidebar-box">
+                        <h4>Categories</h4>
+                        <ul class="uk-list uk-list-line uk-list-space">
+                            <li><a href="#">Main Course</a></li>
+                            <li><a href="#">Appetizer</a></li>
+                            <li><a href="#">Desserts</a></li>
+                            <li><a href="#">Specials</a></li>
+                        </ul>
+                    </div>
+                    <!-- Category Widget End -->
+
+                    <!-- Featured Menu Widget -->
+                    <div class="impx-sidebar-box">
+                        <h4>Featured Menu</h4>
+                        <ul class="impx-featured-product">
+                            <li>
+                                <div class="uk-grid uk-grid-medium">
+                                    <div class="uk-width-1-3">
+                                        <div class="impx-popular-thumb">
+                                            <img src="" alt="Menu thumb 1" />
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-2-3">
+                                        <h6><a href="#">fermentum faucibus</a></h6>
+                                        <select class="5star-rating" name="rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <span class="impx-product-price">$5.00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uk-grid uk-grid-medium">
+                                    <div class="uk-width-1-3">
+                                        <div class="impx-popular-thumb">
+                                            <img src="" alt="Menu thumb 2" />
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-2-3">
+                                        <h6><a href="#">Dolor sit amet</a></h6>
+                                        <select class="5star-rating" name="rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <span class="impx-product-price">$8.00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uk-grid uk-grid-medium">
+                                    <div class="uk-width-1-3">
+                                        <div class="impx-popular-thumb">
+                                            <img src="" alt="Menu thumb 3" />
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-2-3">
+                                        <h6><a href="#">pellentesque nec</a></h6>
+                                        <select class="5star-rating" name="rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <span class="impx-product-price">$12.00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="uk-grid uk-grid-medium">
+                                    <div class="uk-width-1-3">
+                                        <div class="impx-popular-thumb">
+                                            <img src="" alt="Menu thumb 4" />
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-2-3">
+                                        <h6><a href="#">Lacinia quis nec</a></h6>
+                                        <select class="5star-rating" name="rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <span class="impx-product-price">$7.00</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Featured Menu Widget End -->
+
+                    <!-- Tags Cloud Widget -->
+                    <div class="impx-sidebar-box">
+                        <h4>Product Tags</h4>
+                        <ul class="impx-tags-widget">
+                            <li><a href="">Food</a></li>
+                            <li><a href="">Drink</a></li>
+                            <li><a href="">Coffee</a></li>
+                            <li><a href="">Meat</a></li>
+                            <li><a href="">Vegetarian</a></li>
+                            <li><a href="">Dinner</a></li>
+                            <li><a href="">Breafast</a></li>
+                            <li><a href="">Recipes</a></li>
+                            <li><a href="">Lunch</a></li>
+                            <li><a href="">Desserts</a></li>
+                            <li><a href="">Chef</a></li>
+                            <li><a href="">Recommendation</a></li>
+                        </ul>
+                    </div>
+                    <!-- Tags Cloud Widget End -->
+
+                </div>
+                <!-- Sidebar End -->
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(".uk-icon-heart-o").click(function () {
+            if($(this).data('clicked')){
+                $(this).data('clicked', false);
+                $(this).removeClass().addClass('uk-button uk-icon-heart-o');
+            } else {
+                $(this).data('clicked', true);
+                $(this).removeClass().addClass('uk-button uk-icon-heart');
+            }
+        });
+    </script>
+{% endblock %}

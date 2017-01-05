@@ -1,0 +1,20 @@
+{% trans_default_domain 'AppBundle' %}
+{{ dump(produse) }}
+{{ dump(categorii) }}
+
+{#{% for pro in categorii %}#}
+
+    {#{{ pro.name }}<br>#}
+
+    {#{% for prod in produse %}#}
+        {#{% if pro.name == prod.categoryId.name %}#}
+        {#{{ prod.title }}#}
+        {#{{ prod.shortDescription }}#}
+        {#{{ prod.longDescription }}#}
+        {#{{ prod.alt }}#}
+        {#{{ prod.isUsed }}#}
+        {#{{ prod.name }}#}
+        {#{{ prod.path }}<br>#}
+        {#{% endif %}#}
+    {#{% endfor %}#}
+{#{% endfor %}#}

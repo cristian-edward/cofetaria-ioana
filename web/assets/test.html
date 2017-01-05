@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-sameHeight.css"> -->
+<style type="text/css">
+	.height {
+		height: 150px
+	}
+	.col-xs-12, .row-height, .row {
+		color: #ffffff;
+		background-color: rgba(50, 50, 150, 1);
+	}
+	.title {
+		color: #ffffff;
+		min-height: 100px;
+	}
+	.first {
+		color: #ffffff;
+		vertical-align: top;
+		margin: -11px 0 0 0;
+		font-size: 70px;
+	}
+	 .second {
+	 	color: #ffffff;
+		vertical-align: top;
+		margin:  20px 0 -25px 0 ;
+		font-size: 70px;
+	}
+
+	@media (max-width: 1200px){
+		 .second {
+			margin:  36px 0 -25px 0 ;
+		}
+	}
+
+	@media (max-width: 990px){
+		 .second {
+			margin:  76px 0 -15px 0 ;
+		}
+	}
+
+	@media (max-width: 767px){
+		.first {
+			margin:  20px 0 30px 0;
+		}
+		 .second {
+			margin:  15px 0;
+		}
+	}
+	.col-sm-6 {
+		border: 1px solid black;
+	}
+	h1 {
+		border: 2px solid red;
+	}
+</style>
+
+</head>
+<body>
+<div class="height"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<div id="copy-height">
+				<h1>text</h1>
+				<p>text lung <br/> dadasd</p>
+				<p>text lung <br/> dadasd</p>
+				<p>text lung <br/> dadasd</p>
+				<p>text lung <br/> dadasd</p>
+			</div>
+		</div>
+		<div class="col-sm-6 same-height">
+			ccccc
+		</div>
+	</div>
+	<div class="height"></div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="same-height">
+				
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="same-height">
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div class="height"></div>
+	
+
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	// setTimeout(function(){
+	//    window.location.reload(1);
+	// }, 5000);
+
+		
+
+		$(document).ready(function (){
+
+			function sameHeight(copyDimensionId, elemSameDimansion){
+
+				var copyWidth = $( copyDimensionId ).innerWidth();
+				var copyHeight = $( copyDimensionId ).innerHeight();
+
+				var elm = $(  copyDimensionId )
+					copyElm = $( elemSameDimansion );
+
+				var bordT = (  elm.outerHeight() - elm.innerHeight() ) / 2 +'px '+ elm.css('borderTopStyle') + ' ' + elm.css('borderTopColor');
+
+				var paddT = elm.css('padding-top') + ' ' + elm.css('padding-right') + ' '+ elm.css('padding-bottom') + ' ' + elm.css('padding-left');
+				var margT = elm.css('margin-top') + ' ' + elm.css('margin-right') + ' '+ elm.css('margin-bottom') + ' ' + elm.css('margin-left');
+
+				console.log("border: "+bordT+"\npadding: "+paddT+"\nmargin: "+margT+ "\nwidth: "+copyHeight+"px\nheight: "+ copyHeight+"px");
+
+				copyElm.each(function() {
+					copyElm.css({
+						'height' : copyHeight+'px',
+						'width'  : copyWidth+'px',
+						'margin' : margT,
+						'border' : bordT,
+						'padding': paddT
+					});
+				});	
+
+			}	
+
+			sameHeight("#copy-height", '.same-height');
+		});
+			
+		
+
+	</script>
+</body>
+</html>

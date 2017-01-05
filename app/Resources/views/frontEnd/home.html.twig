@@ -1,0 +1,577 @@
+{% extends '::base.html.twig' %}
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %}{{ 'Acasă'|trans }}{% endblock %}
+
+{% block body %}
+    {% include ':frontEnd/index:headerMenu.html.twig' %}
+
+    {% include ':frontEnd/index:slider.html.twig' %}
+
+   {% block content %}{% endblock %}
+
+    <!-- Wrapper Start -->
+    {#<section class="impx-wrapper bg-parallax1" data-uk-parallax="{bg: -200}">
+        <div class="uk-container uk-container-center">
+
+            <div class="uk-grid">
+                <div class="uk-width-xlarge-2-3  uk-width-large-2-3 uk-width-medium-1-1 uk-width-small-1-1 uk-container-center">
+
+                    <!-- Intro Start -->
+                    <div class="impx-intro intro-light uk-text-center">
+                        <h1>Find Our Best Tasty Menu</h1>
+                        <p>Cum sociis natoqu orper a efficitur</p>
+                    </div>
+                    <!-- Intro End -->
+
+                </div>
+            </div>
+
+            <!-- Menu Carousel -->
+            <div class="impx-container">
+                <div class="impx-menu-carousel">
+
+                    <div class="uk-slidenav-position uk-margin" data-uk-slider="{autoplay: true}">
+
+                        <div class="uk-slider-container">
+                            <!-- Menu Carousel Start -->
+                            <ul class="uk-grid uk-slider uk-grid-width-xlarge-1-4 uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
+
+                                <!-- Menu Carousel Item 1 -->
+                                <li>
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>5</span></i></div>
+                                        <img src="images/menu/menu-square1.jpg" alt="Menu 1" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Appetizer</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 1 End -->
+
+                                <!-- Menu Carousel Item 2 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>3</span></i></div>
+                                        <img src="images/menu/menu-square2.jpg" alt="Menu 2" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Main-course</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 2 End -->
+
+                                <!-- Menu Carousel Item 3 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>10</span></i></div>
+                                        <img src="images/menu/menu-square3.jpg" alt="Menu 3" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                        <div class="impx-menu-featured"><div class="impx-menu-featured-badge">Featured</div></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Desserts</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 3 End -->
+
+                                <!-- Menu Carousel Item 4 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>6</span></i></div>
+                                        <img src="images/menu/menu-square4.jpg" alt="Menu 4" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Desserts</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 4 End -->
+
+                                <!-- Menu Carousel Item 5 -->
+                                <li>
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>5</span></i></div>
+                                        <img src="images/menu/menu-square5.jpg" alt="Menu 5" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                        <div class="impx-menu-featured"><div class="impx-menu-featured-badge">Featured</div></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Appetizer</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 5 End -->
+
+                                <!-- Menu Carousel Item 6 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>3</span></i></div>
+                                        <img src="images/menu/menu-square6.jpg" alt="Menu 6" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Main-course</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 6 End -->
+
+                                <!-- Menu Carousel Item 7 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>10</span></i></div>
+                                        <img src="images/menu/menu-square7.jpg" alt="Menu 7" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Desserts</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 7 End -->
+
+                                <!-- Menu Carousel Item 8 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>6</span></i></div>
+                                        <img src="images/menu/menu-square8.jpg" alt="Menu 8" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Desserts</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 8 End -->
+
+                                <!-- Menu Carousel Item 9 -->
+                                <li>
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>5</span></i></div>
+                                        <img src="images/menu/menu-square9.jpg" alt="Menu 9" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Appetizer</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 9 End -->
+
+                                <!-- Menu Carousel Item 10 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>3</span></i></div>
+                                        <img src="images/menu/menu-square10.jpg" alt="Menu 10" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                        <div class="impx-menu-featured"><div class="impx-menu-featured-badge">Featured</div></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Drinks</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 10 End -->
+
+                                <!-- Menu Carousel Item 11 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>10</span></i></div>
+                                        <img src="images/menu/menu-square11.jpg" alt="Menu 11" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Drinks</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 11 End -->
+
+                                <!-- Menu Carousel Item 12 -->
+                                <li class="impx-menu-list2">
+                                    <div class="impx-menu-item">
+                                        <div class="impx-price-badge"><i><span><span class="impx-menu-currency">$</span>6</span></i></div>
+                                        <img src="images/menu/menu-square12.jpg" alt="Menu 12" class=""/>
+                                        <div class="impx-menu-outline"></div>
+                                    </div>
+                                    <div class="impx-menu-desc2 impx-bg-white">
+                                        <h5><a href="#">Menu Title</a></h5>
+                                        <div class="impx-separator"><i class="uk-icon-star"></i></div>
+                                        <p>Aliquet lobortis justo augue finibus sit sagittis primis</p>
+                                        <div class="impx-menu-meta">
+                                            <a href="#"><i class="uk-icon-heart uk-icon-hover"></i></a>
+                                            <a href="#"><i class="uk-icon-share-alt-square uk-icon-hover"></i></a>
+                                            <a href="#" class="impx-menu-cat uk-text-right">Desserts</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Menu Carousel Item 12 End -->
+                            </ul>
+                        </div>
+
+                        <!-- Menu Carousel Navigation -->
+                        <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous"></a>
+                        <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next"></a>
+                        <!-- Menu Carousel Navigation End -->
+
+                        <!-- Menu Carousel End -->
+                    </div>
+
+                </div>
+
+                <!-- Menu Button -->
+                <div class="uk-width-1-1 uk-text-center">
+                    <a class="uk-button uk-button-large border light" href="">Browse Our Menu<i class="uk-icon-folder-open"></i></a>
+                </div>
+                <!-- Menu Button End -->
+
+            </div>
+            <!-- Menu Carousel End -->
+
+        </div>
+        <!-- Wrapper Ovelay -->
+        <div class="impx-overlay darker"></div>
+    </section>
+    <!-- Wrapper End -->
+
+    <!-- Wrapper Start -->
+    <section class="impx-wrapper  impx-padding-bottom">
+        <div class="uk-container uk-container-center">
+
+            <div class="uk-grid ">
+                <div class="uk-width-xlarge-2-3  uk-width-large-2-3 uk-width-medium-1-1 uk-width-small-1-1  uk-container-center" >
+
+                    <!-- Intro -->
+                    <div class="impx-intro  uk-text-center">
+                        <p class="impx-pre-intro">the Services</p>
+                        <h1><span>What We Do</span></h1>
+                        <p>Mauris quis nisi vitae dolor laoreet auris in quam nec diam sagittis aliquet vel molesti turpis eu dolor posuere lacinia penatibus aliquam ut</p>
+                    </div>
+                    <!-- Intro End -->
+
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="uk-grid ">
+                <div class="uk-width-xlarge-8-10 uk-width-large-8-10 uk-width-medium-1-1 uk-container-center uk-margin-bottom">
+                    <!-- Services Start -->
+                    <ul class="uk-grid uk-grid-width-xlarge-1-3  uk-grid-width-large-1-3 uk-grid-width-medium-1-3 uk-grid-width-small-1-1 uk-grid-collapse impx-services-boxes">
+
+                        <!-- Services Item 1 -->
+                        <li class="uk-position-relative">
+                            <div class="impx-service-item uk-align-center">
+                                <div class="impx-service-item-img uk-align-center">
+                                    <img src="images/service-img1.jpg"  class="uk-border-circle" alt="Service Img 1">
+                                </div>
+                                <div class="impx-service-item-content uk-text-center">
+                                    <h4>Breakfast</h4>
+                                    <div class="impx-separator"><i class="uk-icon-coffee"></i></div>
+                                    <p>Class aptent taciti sociosqu ad torquent per nostra, per inceptos himenaeos sagittis aliquet.</p>
+                                    <h5>6.00 am - 10.00 am</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Services Item 1 End -->
+
+                        <!-- Services Item 2 -->
+                        <li class="uk-position-relative">
+                            <div class="impx-service-item active uk-align-center">
+                                <div class="impx-service-item-img">
+                                    <img src="images/service-img2.jpg" class="uk-border-circle" alt="Service Img 2">
+                                </div>
+                                <div class="impx-service-item-content uk-text-center">
+                                    <h4>Lunch</h4>
+                                    <div class="impx-separator"><i class="uk-icon-cutlery"></i></div>
+                                    <p>Class aptent taciti sociosqu ad torquent per nostra, per inceptos himenaeos sagittis aliquet.</p>
+                                    <h5>10.00 am - 2.00 pm</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Services Item 2 End -->
+
+                        <!-- Services Item 3 -->
+                        <li class="uk-position-relative">
+                            <div class="impx-service-item  uk-align-center">
+                                <div class="impx-service-item-img">
+                                    <img src="images/service-img3.jpg" class="uk-border-circle" alt="Service Img 3">
+                                </div>
+                                <div class="impx-service-item-content uk-text-center">
+                                    <h4>Dinner</h4>
+                                    <div class="impx-separator"><i class="uk-icon-glass"></i></div>
+                                    <p>Class aptent taciti sociosqu ad torquent per nostra, per inceptos himenaeos sagittis aliquet.</p>
+                                    <h5>6.00 pm - 11.00 pm</h5>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Services Item 3 End -->
+                    </ul>
+                    <!-- Services End -->
+                </div>
+            </div>
+            <!-- Services Section End -->
+
+        </div>
+    </section>
+    <!-- Wrapper End -->
+
+    <!-- Testimonial Wrapper -->
+    <section class="impx-wrapper bg-parallax2 uk-padding-bottom-remove" data-uk-parallax="{bg: -200}">
+        <div class="uk-container uk-container-center">
+
+            <div class="uk-grid">
+                <div class="uk-width-xlarge-2-3 uk-width-large-2-3 uk-width-medium-1-1 uk-width-small-1-1 uk-container-center">
+                    <!-- Testimonial Intro  -->
+                    <div class="impx-intro intro-light uk-text-center">
+                        <h1>What People Says</h1>
+                    </div>
+                    <!-- Testimonial Intro  End -->
+                </div>
+            </div>
+
+            <!-- Testimonial Start -->
+            <div class="uk-grid impx-testimonial-container">
+                <div class="uk-width-xlarge-2-3 uk-width-large-2-3 uk-width-medium-1-1 uk-width-small-1-1 uk-container-center  uk-text-center">
+
+                    <!-- Testimonial Carousel -->
+                    <div class="impx-testimonial-carousel uk-margin-bottom-remove">
+                        <div class="uk-slidenav-position" data-uk-slideshow="{animation: 'scroll'}">
+                            <ul class="uk-slideshow">
+                                <!-- Testimonial Carousel Item 1 -->
+                                <li>
+                                    <div class="impx-testi-container">
+                                        <div class="impx-testi-image"><img src="images/people/testi-people1.jpg" alt="People 1" width="170" height="170" /></div>
+                                        <div class="impx-testi-text">
+                                            <blockquote>
+                                                <p>Quisque pretium porta ante raesent at justo ornare in dictum nunc mattis tempus euismod sollicitudin nibh efficitur felis a ipsum fringilla</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="impx-testi-name"><p>Mrs. Smith Yan</p></div>
+                                        <div class="impx-company-name"><p>Book Author</p></div>
+                                    </div>
+                                </li>
+                                <!-- Testimonial Carousel Item 1 End -->
+
+                                <!-- Testimonial Carousel Item 2 -->
+                                <li>
+                                    <div class="impx-testi-container">
+                                        <div class="impx-testi-image"><img src="images/people/testi-people2.jpg" alt="People 2" width="170" height="170"/></div>
+                                        <div class="impx-testi-text">
+                                            <blockquote>
+                                                <p>Proin maximus ante eros, ac interdum mauris accumsan nec. In a neque eget ipsum aliquet tempor nec eu erat.</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="impx-testi-name"><p>Mr. Leonardo</p></div>
+                                        <div class="impx-company-name"><p>Student</p></div>
+                                    </div>
+                                </li>
+                                <!-- Testimonial Carousel Item 2 End -->
+
+                                <!-- Testimonial Carousel Item 3 -->
+                                <li>
+                                    <div class="impx-testi-container">
+                                        <div class="impx-testi-image"><img src="images/people/testi-people3.jpg" alt="People 3" width="170" height="170"/></div>
+                                        <div class="impx-testi-text">
+                                            <blockquote>
+                                                <p> Nulla non ex id ipsum sodales lacinia at quis sem. Ut scelerisque, dui bibendum pellentesque varius, mauris odio molestie velit, eu pretium nibh tellus eget elit maximus ante eros, ac interdum</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="impx-testi-name"><p>Mr. Angus Young</p></div>
+                                        <div class="impx-company-name"><p>Band Guitarist</p></div>
+                                    </div>
+                                </li>
+                                <!-- Testimonial Carousel Item 3 End -->
+
+                                <!-- Testimonial Carousel Item 4 -->
+                                <li>
+                                    <div class="impx-testi-container">
+                                        <div class="impx-testi-image"><img src="images/people/testi-people4.jpg" alt="People 4" width="170" height="170"/></div>
+                                        <div class="impx-testi-text">
+                                            <blockquote>
+                                                <p>Nunc sed elit at enim lobortis mollis a pulvinar ligula. Nam porta enim erat, in fermentum ex molestie non. Nulla vitae euismod augue.</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="impx-testi-name"><p>Mrs. Alexandria</p></div>
+                                        <div class="impx-company-name"><p>Business Advisor</p></div>
+                                    </div>
+                                </li>
+                                <!-- Testimonial Carousel Item 4 End -->
+                            </ul>
+
+                            <!-- Testimonial Carousel Navigation -->
+                            <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                            <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                            <!-- Testimonial Carousel Navigation End -->
+
+                        </div>
+                    </div>
+                    <!-- Testimonial Carousel End -->
+
+                </div>
+                <!-- Testimonial Start End -->
+            </div>
+
+        </div>
+        <!-- Overlay -->
+        <div class="impx-overlay darker"></div>
+        <!-- Overlay End -->
+    </section>
+    <!-- Testimonial Wrapper End -->
+
+    <!-- Wrapper -->
+    <section class="impx-wrapper impx-info-wrapper uk-padding-bottom-remove">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+
+                <!-- Contact Info -->
+                <div class="uk-width-xlarge-3-10 uk-width-large-3-10 uk-width-medium-1-1 uk-width-small-1-1 impx-info-wrapper-left uk-margin-large-top uk-text-right">
+                    <h3>Make an Appointment</h3>
+                    <p>Aliquet lobortis justo diam in augue sit amet ipsum eget nulla accumsan egestas imperdiet in laoreet ac, posuere vel ipsum  molestie vulputate risus at </p>
+                    <h5><span>Our Address</span></h5>
+                    <p>Jalan Menuju Surga No. 5<br/>Gang 17, Warungpring<br/> Jawa Tengah</p>
+                    <h5><span>Inqueries</span></h5>
+                    <i class="uk-icon-phone"></i> (021) 620 56824<br/>
+                    <i class="uk-icon-phone"></i> (021) 620 5683<br/>
+                    <i class="uk-icon-envelope-o"> </i> <a href="#">info@warungpring.com</a>
+                </div>
+                <!-- Contact Info End -->
+
+                <!-- Image -->
+                <div class="uk-width-xlarge-4-10 uk-width-large-4-10 uk-width-medium-1-1 uk-width-small-1-1 uk-vertical-align-bottom">
+                    <img src="images/people/chef-stand.png" alt="Chef Stand" class="impx-img-info uk-align-center"/>
+                </div>
+                <!-- Image End -->
+
+                <!-- Opening Hours -->
+                <div class="uk-width-xlarge-3-10 uk-width-large-3-10 uk-width-medium-1-1 uk-width-small-1-1 uk-margin-large-top">
+                    <h3>Opening Hours</h3>
+                    <p>Sit amet ipsum eget nulla ipsum  molestie vulputate risus vulputate risus at lobortis diam in augue sit amet ipsum eget </p>
+                    <ul class="impx-opening-hours impx-star-list gold">
+                        <li>
+                            <h5><span>Breakfast</span></h5>
+                            <p>6.00 AM  - 10.00 AM</p>
+                        </li>
+                        <li>
+                            <h5><span>Lunch</span></h5>
+                            <p>10.00 AM - 2.00 PM</p>
+                        </li>
+                        <li>
+                            <h5><span>Dinner</span></h5>
+                            <p>4.00 PM - 12.00 PM</p>
+                        </li>
+                        <li>
+                            <h5><span>Desserts</span></h5>
+                            <p>All Days</p>
+                        </li>
+                    </ul>
+                    <a href="#" class="uk-button uk-button-large outline default">Make Reservation Now!</a>
+                </div>
+                <!-- Opening Hours End -->
+
+            </div>
+        </div>
+    </section>
+    <!-- Wrapper End -->
+
+    <!-- Subscribe Form -->
+    <div class="impx-cta">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-small">
+                <div class="uk-width-xlarge-1-6 uk-width-large-1-6 uk-width-medium-1-6 uk-width-small-1-1 uk-text-right">
+                    <h4 class="impx-cta-title">Newsletter</h4>
+                </div>
+                <div class="uk-width-xlarge-4-6 uk-width-large-4-6 uk-width-medium-4-6 uk-width-small-1-1">
+                    <form class="uk-form uk-form-large">
+                        <input class="uk-form-large">
+                    </form>
+                </div>
+                <div class="uk-width-xlarge-1-6 uk-width-large-1-6 uk-width-medium-1-6 uk-width-small-1-1 ">
+                    <a class="uk-button uk-button-large color" href="">Subscribe Now<i class="uk-icon-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe Form End -->#}
+
+    {% include ':frontEnd/index:footer.html.twig' %}
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src=""></script>
+    <script src="{{ asset('') }}"></script>
+    <script src="{{ asset('') }}"></script>
+{% endblock %}

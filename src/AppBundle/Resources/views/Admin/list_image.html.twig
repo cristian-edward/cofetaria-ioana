@@ -1,0 +1,11 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+{# | imagine_filter('gallery_element_admin')  de citit  #}
+
+        <td>
+            <img src="{{ object.webPath | imagine_filter('admin_product_image') }}" alt="{{ object.name }}" title="{{ object.name }}" class="img-responsive" />
+        </td>
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% trans_default_domain 'AppBundle' %}
+
+    <!-- Map Wrapper -->
+    <section class="impx-wrapper uk-padding-remove">
+        <div class="uk-container fullwidth uk-container-center uk-padding-remove uk-margin-remove">
+            <div id="impx-map"></div>
+        </div>
+    </section>
+    <!-- Map Wrapper End -->
+
+    <!-- Subscribe Form -->
+    <div class="impx-cta">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-small">
+                <div class="uk-width-xlarge-1-6 uk-width-large-1-6 uk-width-medium-1-6 uk-width-small-1-1 uk-text-right">
+                    <h4 class="impx-cta-title">{{ "Buletin informativ"|trans }}</h4>
+                </div>
+                <div class="uk-width-xlarge-4-6 uk-width-large-4-6 uk-width-medium-4-6 uk-width-small-1-1">
+                    <form class="uk-form uk-form-large">
+                        <input class="uk-form-large">
+                    </form>
+                </div>
+                <div class="uk-width-xlarge-1-6 uk-width-large-1-6 uk-width-medium-1-6 uk-width-small-1-1 ">
+                    <a class="uk-button uk-button-large color" href="">{{ 'Înscrie-te acum' }}<i class="uk-icon-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe Form End -->
+
+    <!-- Footer -->
+    <footer class="impx-footer">
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-margin-bottom">
+
+                <!-- Footer Logo -->
+                <div class="uk-width-1-1 uk-text-center">
+                    <div class="impx-footer-logo">
+                        <img src="{{ asset('assets/images/logo_small.png') }}" alt="Footer Logo"/>
+                    </div>
+                </div>
+                <!-- Footer Logo End -->
+
+                <!-- Footer Menu -->
+                <div class="uk-width-1-1  uk-text-center">
+                    <ul class="impx-footer-menu">
+                        <li><a href="#">{% trans %}Acasă{% endtrans %}</a></li>
+                        <li><a href="#">{{ 'Meniu'|trans }}</a></li>
+                        <li><a href="#">{{ 'Contact'|trans }}</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Menu End -->
+
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="impx-footer-bottom">
+            <div class="uk-container uk-container-center">
+                <div class="uk-grid">
+                    <div class="uk-width-xlarge-1-2 uk-width-large-1-2 uk-width-medium-1-2  uk-width-small-1-1">
+                        <ul class="impx-footer-contact">
+                            <li><a href="tel:0217265762">(021) 726 5762</a></li>
+                            <li><a href="mailto:info@cofetariaioana.com">info@cofetariaioana.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="uk-width-xlarge-1-2 uk-width-large-1-2 uk-width-medium-1-2 uk-width-small-1-1 uk-text-right">
+                        <p class="impx-footer-copyright">&copy; Cofetaria IOANA {{ 'now'|date('Y') }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Info End -->
+
+        {#<a href="#impx-body" class="impx-to-top" data-uk-smooth-scroll="{offset: 0}"><i class="uk-icon-long-arrow-up"></i></a>#}
+
+    </footer>
+    <!-- Footer End -->
