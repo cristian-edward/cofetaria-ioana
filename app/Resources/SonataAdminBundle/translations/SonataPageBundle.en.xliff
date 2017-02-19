@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="">
+        <body>
+            <trans-unit id="label_product">
+                <source>Product</source>
+                <target>Product</target>
+            </trans-unit>
+            <trans-unit id="label_category">
+                <source>Category</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="label_weight">
+                <source>Weight</source>
+                <target>Weight</target>
+            </trans-unit>
+            <trans-unit id="label_subcategory">
+                <source>Subcategory</source>
+                <target>Subcategory</target>
+            </trans-unit>
+            <trans-unit id="label_shortdescription">
+                <source>Short description</source>
+                <target>Short description</target>
+            </trans-unit>
+            <trans-unit id="label_longdescription">
+                <source>Long description</source>
+                <target>Long description</target>
+            </trans-unit>
+            <trans-unit id="label_alt">
+                <source>Alt</source>
+                <target>Alternative</target>
+            </trans-unit>
+            <trans-unit id="label_active">
+                <source>Active</source>
+                <target>Active</target>
+            </trans-unit>
+            <trans-unit id="label_title">
+                <source>Title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="label_name">
+                <source>Name</source>
+                <target>Product name</target>
+            </trans-unit>
+            <trans-unit id="label_isused">
+                <source>Is Used</source>
+                <target>Is Used</target>
+            </trans-unit>
+            <trans-unit id="label_action">
+                <source>Action</source>
+                <target>Action</target>
+            </trans-unit>
+            <trans-unit id="label_productlist">
+                <source>Product List</source>
+                <target>Product List</target>
+            </trans-unit>
+            <trans-unit id="label_user">
+                <source>User</source>
+                <target>User</target>
+            </trans-unit>
+            <trans-unit id="label_link">
+                <source>Link</source>
+                <target>Link</target>
+            </trans-unit>
+            <trans-unit id="label_categorylist">
+                <source>Category List</source>
+                <target>Category List</target>
+            </trans-unit>
+            <trans-unit id="label_subcategorylist">
+                <source>Subcategory List</source>
+                <target>Subcategory List</target>
+            </trans-unit>
+            <trans-unit id="label_weightlist">
+                <source>Weight List</source>
+                <target>Weight List</target>
+            </trans-unit>
+            <trans-unit id="label_description">
+                <source>Description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="label_photo">
+                <source>Photo</source>
+                <target>Photos</target>
+            </trans-unit>
+            <trans-unit id="label_nameofsubcategory">
+                <source>Name of subcategory</source>
+                <target>Name of subcategory</target>
+            </trans-unit>
+        </body>
+  </file>
+</xliff>

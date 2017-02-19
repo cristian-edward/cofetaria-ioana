@@ -7,14 +7,48 @@ app:
 #    requirements:
 #        _locale: "%app.locales%"
 
-admin_area:
-    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
-    prefix: /admin
+#admin_area:
+#    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+#    prefix: /admin
+#
+#_sonata_admin:
+#    resource: .
+#    type: sonata_admin
+#    prefix: /admin
 
-_sonata_admin:
+admin_dashboard:
+    prefix: /{_locale}/admin/
+    path: /{_locale}/admin/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true # this for 301
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /{_locale}/admin
+
+sonata_admin:
     resource: .
     type: sonata_admin
+    prefix: /{_locale}/admin
+
+# redirect routes for the non-locale routes
+admin_without_locale:
     prefix: /admin
+    path: /admin
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true # this for 301
+
+admin_dashboard_without_locale:
+    prefix: /admin/dashboard
+    path: /admin/dashboard
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="">
+        <body>
+            <trans-unit id="label_product">
+                <source>Product</source>
+                <target>Produs</target>
+            </trans-unit>
+            <trans-unit id="label_category">
+                <source>Category</source>
+                <target>Categorii</target>
+            </trans-unit>
+            <trans-unit id="label_weight">
+                <source>Weight</source>
+                <target>Greutatea produsului</target>
+            </trans-unit>
+            <trans-unit id="label_subcategory">
+                <source>Subcategory</source>
+                <target>Subcategorii</target>
+            </trans-unit>
+            <trans-unit id="label_shortdescription">
+                <source>Short Description</source>
+                <target>Descriere scurtă</target>
+            </trans-unit>
+            <trans-unit id="label_longdescription">
+                <source>Long Description</source>
+                <target>Descriere lungă</target>
+            </trans-unit>
+            <trans-unit id="label_alt">
+                <source>Alt</source>
+                <target>Alternative</target>
+            </trans-unit>
+            <trans-unit id="label_active">
+                <source>Active</source>
+                <target>Activ</target>
+            </trans-unit>
+            <trans-unit id="label_title">
+                <source>Title</source>
+                <target>Titlu</target>
+            </trans-unit>
+            <trans-unit id="label_name">
+                <source>Name</source>
+                <target>Numele produsului</target>
+            </trans-unit>
+            <trans-unit id="label_isused">
+                <source>Is Used</source>
+                <target>Este folosit</target>
+            </trans-unit>
+            <trans-unit id="label_action">
+                <source>Action</source>
+                <target>Actiuni</target>
+            </trans-unit>
+            <trans-unit id="label_productlist">
+                <source>Product List</source>
+                <target>Lista de produse</target>
+            </trans-unit>
+            <trans-unit id="label_user">
+                <source>User</source>
+                <target>Conturi de useri</target>
+            </trans-unit>
+            <trans-unit id="label_link">
+                <source>Link</source>
+                <target>Legatură</target>
+            </trans-unit>
+            <trans-unit id="label_categorylist">
+                <source>Category List</source>
+                <target>Lista de categorii</target>
+            </trans-unit>
+            <trans-unit id="label_subcategorylist">
+                <source>Subcategory List</source>
+                <target>Listă de subcategorii</target>
+            </trans-unit>
+            <trans-unit id="label_weightlist">
+                <source>Weight List</source>
+                <target>Listă greutate produs</target>
+            </trans-unit>
+            <trans-unit id="label_description">
+                <source>Description</source>
+                <target>Descriere</target>
+            </trans-unit>
+            <trans-unit id="label_photo">
+                <source>Photo</source>
+                <target>Poze</target>
+            </trans-unit>
+            <trans-unit id="label_nameofsubcategory">
+                <source>Name of subcategory</source>
+                <target>Numele subcategoriei</target>
+            </trans-unit>
+        </body>
+  </file>
+</xliff>

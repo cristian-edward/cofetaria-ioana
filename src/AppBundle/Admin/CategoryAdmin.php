@@ -20,6 +20,7 @@ class CategoryAdmin extends AbstractAdmin
 //    create route for caregory
     protected $baseRouteName = 'admin-category';
     protected $baseRoutePattern = 'admin-category';
+    protected $translationDomain = 'SonataPageBundle';
 
     #These lines configure which fields are displayed on the edit and create actions. The FormMapper behaves similar to the FormBuilder of the Symfony Form component;
     // Fields to be shown on create/edit forms
@@ -44,7 +45,15 @@ class CategoryAdmin extends AbstractAdmin
     {
         $listMapper->addIdentifier('name')
             ->addIdentifier('link')
-            ->add('active');
+            ->add('active')
+            // You may also specify the actions you want to be displayed in the list
+            ->add('_action', null, array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ));
     }
 
     // Fields to be shown on show action

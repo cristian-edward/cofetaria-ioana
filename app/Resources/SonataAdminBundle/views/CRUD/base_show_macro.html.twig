@@ -24,11 +24,21 @@
                             {% block show_field %}
                                 <tr class="sonata-ba-view-container">
                                     {% if elements[field_name] is defined %}
-                                        {{ elements[field_name]|render_view_element(object)}}
+                                        {{ elements[field_name]|render_view_element(object)  }}
                                     {% endif %}
                                 </tr>
                             {% endblock %}
                         {% endfor %}
+                                <tr>
+                                    <th>
+
+                                    </th>
+                                    <td>
+                                        <a class="btn btn-success pull-right" href="{{ admin.generateUrl('list') }}">
+                                            <i class="fa fa-th-list" aria-hidden="true"></i> {{ 'link_action_list'|trans({}, 'SonataAdminBundle') }}
+                                        </a>
+                                    </td>
+                                </tr>
                         </tbody>
                     </table>
                 </div>

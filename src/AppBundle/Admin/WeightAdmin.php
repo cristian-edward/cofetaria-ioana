@@ -17,6 +17,8 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class WeightAdmin extends AbstractAdmin
 {
+    protected $translationDomain = 'SonataPageBundle';
+
     #These lines configure which fields are displayed on the edit and create actions. The FormMapper behaves similar to the FormBuilder of the Symfony Form component;
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
@@ -33,7 +35,15 @@ class WeightAdmin extends AbstractAdmin
     // Fields to be shown on lists
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('weight');
+        $listMapper->addIdentifier('weight')
+                    // You may also specify the actions you want to be displayed in the list
+                    ->add('_action', null, array(
+                        'actions' => array(
+                            'show' => array(),
+                            'edit' => array(),
+                            'delete' => array(),
+                        )
+                    ));
     }
 
     // Fields to be shown on show action

@@ -10,29 +10,29 @@ services:
     app.admin.user:
         class: AppBundle\Admin\UserAdmin
         tags:
-        - { name: sonata.admin, manager_type: orm, group: 'Administration', label: "User" }
+        - { name: sonata.admin, manager_type: orm, group: 'Administration', label: "User", translation_domain: "SonataPageBundle" }
         arguments: [~, AppBundle\Entity\Admin\User, ~]
 
     app.admin.product:
         class: AppBundle\Admin\ProductAdmin
         tags:
-        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Product" }
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Product", translation_domain: "SonataPageBundle" }
         arguments: [~, AppBundle\Entity\Admin\Product, ~]
 
     app.admin.category:
         class: AppBundle\Admin\CategoryAdmin
         tags:
-        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Category" }
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Category", translation_domain: "SonataPageBundle" }
         arguments: [~, AppBundle\Entity\Admin\Category, ~]
 
     app.admin.weight:
         class: AppBundle\Admin\WeightAdmin
         tags:
-        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Weight" }
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Weight", translation_domain: "SonataPageBundle" }
         arguments: [~, AppBundle\Entity\Admin\Weight, ~]
 
     app.admin.subcategory:
         class: AppBundle\Admin\SubcategoryAdmin
         tags:
-        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Subcategory" }
+        - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Subcategory", translation_domain: "SonataPageBundle" }
         arguments: [~, AppBundle\Entity\Admin\Subcategory, ~]

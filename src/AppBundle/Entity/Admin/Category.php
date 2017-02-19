@@ -81,17 +81,6 @@ class Category
         return $this->subcategory;
     }
 
-    public function setSubcategory(Subcategory $categoty)
-    {
-        if (count($categoty) > 0) {
-            foreach ($categoty as $i) {
-                $this->addSubcategory($i);
-            }
-        }
-
-        return $this;
-    }
-
     /**
      * Add subcategory
      *

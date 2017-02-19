@@ -462,7 +462,6 @@ class Product
         }
     }
 
-
     /**
      * Get file.
      *
@@ -501,7 +500,12 @@ class Product
         return 'assets/images/uploads/products';
     }
 
-
+    /**
+     * Lifecycle callback to upload the file to the server
+     */
+    public function lifecycleFileUpload() {
+        $this->upload();
+    }
 
     /**
      * @return mixed

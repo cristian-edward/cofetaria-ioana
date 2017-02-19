@@ -15,7 +15,8 @@ use Sonata\AdminBundle\Route\RouteCollection;
 */
 class UserAdmin extends AbstractAdmin
 {
-	
+    protected $translationDomain = 'SonataPageBundle';
+
 	 protected function configureFormFields(FormMapper $formMapper)
     {
     	#These lines configure which fields are displayed on the edit and create actions. The FormMapper behaves similar to the FormBuilder of the Symfony Form component;
@@ -35,8 +36,7 @@ class UserAdmin extends AbstractAdmin
     			   ->add('enabled', null, [
 	    			   	'required' => true, 
 	    			   	'label' => 'Enabled user'
-    			   	]) 
-					;
+    			   	]);
          
     }
 
@@ -58,7 +58,14 @@ class UserAdmin extends AbstractAdmin
     			   ->addIdentifier('email')
     			   ->add('roles')
     			   ->add('enabled')
-			       ;
+					// You may also specify the actions you want to be displayed in the list
+					->add('_action', null, array(
+						'actions' => array(
+							'show' => array(),
+							'edit' => array(),
+							'delete' => array(),
+						)
+					));
     }
 
 

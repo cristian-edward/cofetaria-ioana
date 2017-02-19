@@ -2389,7 +2389,7 @@ window.theme = {};
 					thumbInfoPreview;
 
 				// Add Arrows
-				$header.find('.dropdown-toggle, .dropdown-submenu > a').append($('<i />').addClass('uk-icon-caret-down'));
+				//$header.find('.dropdown-toggle, .dropdown-submenu > a').append($('<i />').addClass('uk-icon-caret-down'));
 
 				// Preview Thumbs
 				self.$wrapper.find('a[data-thumb-preview]').each(function() {

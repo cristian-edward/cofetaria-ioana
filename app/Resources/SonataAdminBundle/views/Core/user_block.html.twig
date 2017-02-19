@@ -1,1 +1,28 @@
-{% block user_block %}{# Customize this value #}{% endblock %}
+{% block user_block %}
+{#    <div class="dropdown-menu multi-column dropdown-add">
+        <div class="container-fluid">
+            <div class="row">
+                <ul class="dropdown-menu">#}
+                    <li role="presentation" class="dropdown-header">
+                        <i class="fa fa-cogs"></i>
+                        Languages
+                    </li>
+    {{ dump(app.request.getLocale()) }}
+   {# {% for locale in locales %}
+        {% if loop.index > 1 %} | {% endif %}
+        <li role="presentation">
+            <a href="{{ locale.link }}" title="{{ locale.locale_target_language }}">{{ locale.locale_target_language }}</a>
+        </li>
+    {% endfor %}#}
+                   {# <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ro'})) }}"><img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-ro" alt="{{ 'Română'|trans }}" /> {{ 'Română'|trans }}</a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" tabindex="-1" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"><img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-us" alt="{{ 'Engleza'|trans }}" /> {{ 'Engleza'|trans }}</a>
+                    </li>#}
+  {#              </ul>
+            </div>
+        </div>
+    </div>
+#}
+{% endblock %}
