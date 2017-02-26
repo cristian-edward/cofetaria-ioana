@@ -46,46 +46,6 @@ class Product
      */
     private $longDescription;
 
-    /*
-     * @var string
-     *
-     * @ORM\Column(name="alt", type="string", length=100)
-
-    private $alt;
-*/
-    /*
-     * @var boolean
-     *
-     * @ORM\Column(name="is_used", type="boolean", nullable=true)
-
-    private $isUsed;
-*/
-    /*
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
-
-    private $name;
-*/
-    /*
-     * @var string
-     *
-     * @ORM\Column(name="path", length=255, nullable=true)
-
-    private $path;
-*/
-    /*
-     * @var string
-     *
-     * @Assert\File(
-     *     maxSize = "5M",
-     *     mimeTypes = {"image/jpeg", "image/gif", "image/png", "image/tiff"},
-     *     maxSizeMessage = "The maxmimum allowed file size is 5MB.",
-     *     mimeTypesMessage = "Only the filetypes image are allowed."
-     * )
-
-    private $file;
-*/
     /**
      * @var bool
      *
@@ -106,6 +66,12 @@ class Product
      * @ORM\JoinColumn(name="weight_id", referencedColumnName="id")
      */
     private $weightId;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Picture")
+     * @ORM\JoinColumn(name="product", referencedColumnName="id")
+     */
+    private $pictureId;
 
     /**
      * @var \DateTime
@@ -330,9 +296,30 @@ class Product
         return $this->weightId;
     }
 
+    /**
+     * Set pictureId
+     *
+     * @param \AppBundle\Entity\Admin\Picture $picture
+     *
+     * @return $this
+     */
+    public function setPictureId(\AppBundle\Entity\Admin\Picture $picture = null)
+    {
+        $this->pictureId = $picture;
+
+        return $this;
+    }
 
 
-
+    /**
+     * Get pictureId
+     *
+     * @return \AppBundle\Entity\Admin\Picture
+     */
+    public function getPictureId()
+    {
+        return $this->pictureId;
+    }
 
 
 }

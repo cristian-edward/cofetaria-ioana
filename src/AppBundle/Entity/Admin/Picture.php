@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity\Admin;
 
+use AppBundle\AppBundle;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
@@ -74,6 +76,11 @@ class Picture
     private $isUsed;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Product", mappedBy="pictureId", cascade={"persist"})
+     */
+    private $product;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="create_at", type="datetime")
@@ -86,6 +93,11 @@ class Picture
      * @ORM\Column(name="update_at", type="datetime")
      */
     private $updateAt;
+
+    public function __construct()
+    {
+        $this->product = new ArrayCollection();
+    }
 
     /**
      * @return string
@@ -403,6 +415,31 @@ class Picture
         // get rid of the __DIR__ so it doesn't screw up
         // when displaying uploaded doc/image in the view.
         return 'assets/images/uploads/products';
+    }
+
+
+    /**
+     * Add picture
+     *
+     * @param \AppBundle\Entity\Admin\Product mixed $product
+     *
+     * @return picture
+     */
+    public function addProduct(\AppBundle\Entity\Admin\Product $product)
+    {
+        $product->setPictureId($this);
+
+        $this->product->add($product);
+    }
+
+    /**
+     * Remove subcategory
+     *
+     * @param \AppBundle\Entity\Admin\Subcategory $subcategory
+     */
+    public function removeProduct(\AppBundle\Entity\Admin\Product $product)
+    {
+        $this->product->removeElement($product);
     }
 }
 
