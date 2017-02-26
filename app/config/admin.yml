@@ -36,3 +36,9 @@ services:
         tags:
         - { name: sonata.admin, manager_type: orm, group: 'Category', label: "Subcategory", translation_domain: "SonataPageBundle" }
         arguments: [~, AppBundle\Entity\Admin\Subcategory, ~]
+
+    app.admin.picture:
+        class: AppBundle\Admin\PictureAdmin
+        arguments: [~, AppBundle\Entity\Admin\Picture, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Category', label: Picture, translate_domain: "SonataPageBundle" }

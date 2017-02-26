@@ -37,13 +37,13 @@
                                             {% if app.request.getLocale() == 'ro' %}
                                                 <img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-ro" alt="{{ 'Română'|trans }}" /> {{ 'Română'|trans }}
                                             {% else %}
-                                                <img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-us" alt="{{ 'Engleza'|trans }}" /> {{ 'Engleza'|trans }}
+                                                <img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-us" alt="{{ 'Engleză'|trans }}" /> {{ 'Engleză'|trans }}
                                             {% endif %}
                                             <i class="uk-icon-angle-down"></i>
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownLanguage">
                                             <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ro'})) }}"><img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-ro" alt="{{ 'Română'|trans }}" /> {{ 'Română'|trans }}</a></li>
-                                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"><img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-us" alt="{{ 'Engleza'|trans }}" /> {{ 'Engleza'|trans }}</a></li>
+                                            <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"><img src="{{ asset('assets/images/blank.gif') }}" class="flag flag-us" alt="{{ 'Engleză'|trans }}" /> {{ 'Engleză'|trans }}</a></li>
                                         </ul>
                                     </li>
                                     <li class="hidden-xs">

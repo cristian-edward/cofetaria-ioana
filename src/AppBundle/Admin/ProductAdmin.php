@@ -43,7 +43,7 @@ class ProductAdmin extends AbstractAdmin
                         'translation_domain' => 'SonataPageBundle',
                     ])
                     ->add('longDescription')
-                    ->add('alt')
+                  #  ->add('alt')
                     ->add('weightId', null, [ 'label' => 'Weight' ])
                     ->add('categoryId', null, [ 'label' => 'Category' ])
                     ->add('active')
@@ -51,9 +51,9 @@ class ProductAdmin extends AbstractAdmin
            /* ->end()
             ->tab('Photo')*/
                 ->with('Photo')
-                    ->add('name')
-                    ->add('file', 'file',  [],  $fileFieldOptions)
-                    ->add('isUsed')
+                 #   ->add('name')
+                 #   ->add('file', 'file',  [],  $fileFieldOptions)
+                 #   ->add('isUsed')
                 ->end()
            /* ->end()*/
         ;
@@ -72,11 +72,11 @@ class ProductAdmin extends AbstractAdmin
             ))
             ->add('shortDescription')
             ->add('longDescription')
-            ->add('alt')
+          #  ->add('alt')
             ->add('weightId', null, [ 'label' => 'Weight' ])
             ->add('active')
-            ->add('name')
-            ->add('isUsed')
+           # ->add('name')
+           # ->add('isUsed')
         ;
     }
 
@@ -87,7 +87,7 @@ class ProductAdmin extends AbstractAdmin
             'translation_domain' => 'SonataPageBundle',
         ))
             ->addIdentifier('shortDescription')
-            ->add('alt')
+           # ->add('alt')
             ->add('weightId', null, [ 'label' => 'Weight' ])
             ->add('active')
             // You may also specify the actions you want to be displayed in the list
@@ -111,15 +111,15 @@ class ProductAdmin extends AbstractAdmin
             ->add('categoryId', null, ['label' => 'Category'])
             ->add('shortDescription')
             ->add('longDescription')
-            ->add('alt')
+           # ->add('alt')
             ->add('weightId', null, [ 'label' => 'Weight' ])
             ->add('active')
-            ->add('name')
-            ->add('path', null, [
+          #  ->add('name')
+            /*->add('path', null, [
                 'template' => 'AppBundle:Admin:list_image.html.twig',
                 'label' => 'Picture'
-            ])
-            ->add('isUsed')
+            ])*/
+           # ->add('isUsed')
 
           # ->add('slug')
            #->add('author')

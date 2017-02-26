@@ -2,7 +2,7 @@
 
 {% block field %}
 {# | imagine_filter('gallery_element_admin')  de citit  #}
-
+        <th>{% block name %}{{ admin.trans(field_description.label) }}{% endblock %}</th>
         <td>
             <img src="{{ object.webPath | imagine_filter('admin_product_image') }}" alt="{{ object.name }}" title="{{ object.name }}" class="img-responsive" />
         </td>

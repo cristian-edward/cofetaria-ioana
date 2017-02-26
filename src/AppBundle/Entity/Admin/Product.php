@@ -46,35 +46,35 @@ class Product
      */
     private $longDescription;
 
-    /**
+    /*
      * @var string
      *
      * @ORM\Column(name="alt", type="string", length=100)
-     */
-    private $alt;
 
-    /**
+    private $alt;
+*/
+    /*
      * @var boolean
      *
      * @ORM\Column(name="is_used", type="boolean", nullable=true)
-     */
-    private $isUsed;
 
-    /**
+    private $isUsed;
+*/
+    /*
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
-     */
-    private $name;
 
-    /**
+    private $name;
+*/
+    /*
      * @var string
      *
      * @ORM\Column(name="path", length=255, nullable=true)
-     */
-    private $path;
 
-    /**
+    private $path;
+*/
+    /*
      * @var string
      *
      * @Assert\File(
@@ -83,9 +83,9 @@ class Product
      *     maxSizeMessage = "The maxmimum allowed file size is 5MB.",
      *     mimeTypesMessage = "Only the filetypes image are allowed."
      * )
-     */
-    private $file;
 
+    private $file;
+*/
     /**
      * @var bool
      *
@@ -204,54 +204,6 @@ class Product
     public function getLongDescription()
     {
         return $this->longDescription;
-    }
-
-    /**
-     * Set src
-     *
-     * @param string $src
-     *
-     * @return Product
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get src
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * Set alt
-     *
-     * @param string $alt
-     *
-     * @return Product
-     */
-    public function setAlt($alt)
-    {
-        $this->alt = $alt;
-
-        return $this;
-    }
-
-    /**
-     * Get alt
-     *
-     * @return string
-     */
-    public function getAlt()
-    {
-        return $this->alt;
     }
 
     /**
@@ -378,191 +330,9 @@ class Product
         return $this->weightId;
     }
 
-    public function __toString()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Sets file.
-     *
-     * @param UploadedFile $file
-     */
-    public function setFile(UploadedFile $file = null)
-    {
-        $this->file = $file;
-        // check if we have an old image path
-        if (is_file($this->getAbsolutePath())) {
-            // store the old name to delete after the update
-            $this->temp = $this->getAbsolutePath();
-            $this->path = null;
-        } else {
-            $this->path = 'initial';
-        }
-    }
-
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function preUpload()
-    {
-        if (null !== $this->getFile()) {
-
-            //  $this->getFile()->getClientOriginalName() is not clean so first: CLEAN IT!
-
-            $this->setPath($this->getCreateAt()->format('Y-m-d_H-i-s').'_'.$this->getFile()->getClientOriginalName());
-        }
-    }
-
-    /**
-     * @ORM\PostPersist()
-     * @ORM\PostUpdate()
-     */
-    public function upload()
-    {
-        if (null === $this->getFile()) {
-            return;
-        }
-
-        // check if we have an old image
-        if (isset($this->temp)) {
-            // delete the old image
-            unlink($this->temp);
-            // clear the temp image path
-            $this->temp = null;
-        }
-
-        // you must throw an exception here if the file cannot be moved
-        // so that the entity is not persisted to the database
-        // which the UploadedFile move() method does
-        $this->getFile()->move(
-            $this->getUploadRootDir(),
-            $this->path
-        );
-
-        $this->setFile(null);
-    }
-
-    /**
-     * @ORM\PreRemove()
-     */
-    public function storeFilenameForRemove()
-    {
-        $this->temp = $this->getAbsolutePath();
-    }
-
-    /**
-     * @ORM\PostRemove()
-     */
-    public function removeUpload()
-    {
-        if (isset($this->temp)) {
-            unlink($this->temp);
-        }
-    }
-
-    /**
-     * Get file.
-     *
-     * @return UploadedFile
-     */
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    public function getAbsolutePath()
-    {
-        return null === $this->path
-            ? null
-            : $this->getUploadRootDir().'/'.$this->path;
-    }
-
-    public function getWebPath()
-    {
-        return null === $this->path
-            ? null
-            : $this->getUploadDir().'/'.$this->path;
-    }
-
-    protected function getUploadRootDir()
-    {
-        // the absolute directory path where uploaded
-        // documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    protected function getUploadDir()
-    {
-        // get rid of the __DIR__ so it doesn't screw up
-        // when displaying uploaded doc/image in the view.
-        return 'assets/images/uploads/products';
-    }
-
-    /**
-     * Lifecycle callback to upload the file to the server
-     */
-    public function lifecycleFileUpload() {
-        $this->upload();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    /**
-     * @param mixed $path
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param mixed $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isIsUsed()
-    {
-        return $this->isUsed;
-    }
-
-    /**
-     * @param boolean $isUsed
-     */
-    public function setIsUsed($isUsed)
-    {
-        $this->isUsed = $isUsed;
-    }
 
 
-    /**
-     * Get isUsed
-     *
-     * @return boolean
-     */
-    public function getIsUsed()
-    {
-        return $this->isUsed;
-    }
+
+
+
 }
