@@ -25,7 +25,7 @@ class Picture
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     private $temp;
 
@@ -33,28 +33,28 @@ class Picture
      * @ORM\Column(name="tip", type="string", length=255)
      *
      */
-    private $tip;
+    protected $tip;
 
     /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="path", type="string", length=255, nullable=true)
      */
-    private $path;
+    protected $path;
 
     /**
      * @var string
      *
      * @ORM\Column(name="seo_link", type="string", length=100, unique=true)
      */
-    private $seoLink;
+    protected $seoLink;
 
     /**
      * @var string
@@ -66,46 +66,48 @@ class Picture
      *     mimeTypesMessage = "Only the filetypes image are allowed."
      * )
      */
-    private $file;
+    protected $file;
 
     /**
      * @var bool
      *
      * @ORM\Column(name="is_used", type="boolean", nullable=true)
      */
-    private $isUsed;
-
+    protected $isUsed;
+#@ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Product", mappedBy="picture", cascade={"persist"})
+#* @ORM\JoinColumn(name="product_id", referencedColumnName="id")
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Product", mappedBy="pictureId", cascade={"persist"})
+     * @var product
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Product", inversedBy="picture", cascade={"persist"})
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      */
-    private $product;
+    protected $product;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="create_at", type="datetime")
      */
-    private $createAt;
+    protected $createAt;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="update_at", type="datetime")
      */
-    private $updateAt;
+    protected $updateAt;
 
-    public function __construct()
-    {
-        $this->product = new ArrayCollection();
-    }
 
     /**
      * @return string
      */
     public function __toString()
     {
-        return $this->name;
+       return $this->name;
     }
+
+
 
     /**
      * Get id
@@ -338,7 +340,7 @@ class Picture
 
             //  $this->getFile()->getClientOriginalName() is not clean so first: CLEAN IT!
 
-            $this->setPath($this->getCreateAt()->format('Y-m-d_H-i-s').'_'.$this->getFile()->getClientOriginalName());
+            $this->setPath($this->getCreateAt()->format('Y-m-d_H-i-s') . '_' . $this->getFile()->getClientOriginalName());
         }
     }
 
@@ -393,21 +395,21 @@ class Picture
     {
         return null === $this->path
             ? null
-            : $this->getUploadRootDir().'/'.$this->path;
+            : $this->getUploadRootDir() . '/' . $this->path;
     }
 
     public function getWebPath()
     {
         return null === $this->path
             ? null
-            : $this->getUploadDir().'/'.$this->path;
+            : $this->getUploadDir() . '/' . $this->path;
     }
 
     protected function getUploadRootDir()
     {
         // the absolute directory path where uploaded
         // documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
     }
 
     protected function getUploadDir()
@@ -417,29 +419,29 @@ class Picture
         return 'assets/images/uploads/products';
     }
 
-
     /**
-     * Add picture
-     *
-     * @param \AppBundle\Entity\Admin\Product mixed $product
-     *
-     * @return picture
+     * Updates the hash value to force the preUpdate and postUpdate events to fire
      */
-    public function addProduct(\AppBundle\Entity\Admin\Product $product)
-    {
-        $product->setPictureId($this);
-
-        $this->product->add($product);
+    public function refreshUpdated() {
+        $this->setUpdateAt();
     }
 
     /**
-     * Remove subcategory
+     * Get product
      *
-     * @param \AppBundle\Entity\Admin\Subcategory $subcategory
+     * @return array or string
      */
-    public function removeProduct(\AppBundle\Entity\Admin\Product $product)
+    public function getProduct()
     {
-        $this->product->removeElement($product);
+        return $this->product;
     }
+
+    public function setProduct(\AppBundle\Entity\Admin\Product $product)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
 }
 

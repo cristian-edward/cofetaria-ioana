@@ -77,7 +77,6 @@ class PictureAdmin extends AbstractAdmin
             ->add('name')
             ->add('path', null, [
                 'template' => 'AppBundle:Admin:list_image.html.twig',
-                'label' => false
             ])
             ->add('seoLink')
             ->add('isUsed')

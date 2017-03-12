@@ -16,3 +16,4 @@
 /web/bundles/
 /web/assets/images/
 /web/media/
+!/.idea/

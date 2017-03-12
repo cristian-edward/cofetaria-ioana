@@ -45,6 +45,12 @@ file that was distributed with this source code.
             <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
             {{ form_widget(child, {'attr': {'class': attr.widget_class|default('')}}) }}
             {{ child.vars.label|trans({}, translation_domain) }}
+            {% for ch in child.parent.vars['data'] %}
+                {% if child.vars.value == ch.id %}
+
+                    <img src="{{ asset(ch.webpath) |imagine_filter('admin_choice_image') }}" alt="{{ ch.seoLink }}" class="display-block" />
+                {% endif %}
+            {% endfor %}
             </label>
             {% if widget_type is defined and widget_type != 'inline' %}
                 </div>

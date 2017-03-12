@@ -2,10 +2,9 @@
 
 namespace AppBundle\Entity\Admin;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Product
@@ -23,35 +22,35 @@ class Product
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=100)
      */
-    private $title;
+    protected $title;
 
     /**
      * @var string
      *
      * @ORM\Column(name="short_description", type="string", length=150)
      */
-    private $shortDescription;
+    protected $shortDescription;
 
     /**
      * @var string
      *
      * @ORM\Column(name="long_description", type="text")
      */
-    private $longDescription;
+    protected $longDescription;
 
     /**
      * @var bool
      *
      * @ORM\Column(name="active", type="boolean")
      */
-    private $active;
+    protected $active;
 
     /**
      * @var int
@@ -59,19 +58,22 @@ class Product
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Category")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
-    private $categoryId;
+    protected $categoryId;
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Weight")
      * @ORM\JoinColumn(name="weight_id", referencedColumnName="id")
      */
-    private $weightId;
+    protected $weightId;
+#@ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Picture", inversedBy="product", cascade={"persist"})
+#* @ORM\JoinColumn(name="product_id", referencedColumnName="id")
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Picture")
-     * @ORM\JoinColumn(name="product", referencedColumnName="id")
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Picture", mappedBy="product", cascade={"persist"})
+     *
      */
-    private $pictureId;
+    public $picture;
 
     /**
      * @var \DateTime
@@ -79,7 +81,7 @@ class Product
      * @ORM\Column(name="create_at", type="datetime")
      * @Assert\DateTime()
      */
-    private $createAt;
+    protected $createAt;
 
     /**
      * @var \DateTime
@@ -87,8 +89,50 @@ class Product
      * @ORM\Column(name="update_at", type="datetime")
      * @Assert\DateTime()
      */
-    private $updateAt;
+    protected $updateAt;
 
+    public function __construct()
+    {
+        $this->picture = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set pictures
+     *
+     * @param \AppBundle\Entity\Admin\Picture $picture
+     *
+     * @return $this
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+
+    /**
+     * @param Picture $pictures
+     */
+    public function addPicture(\AppBundle\Entity\Admin\Picture $picture)
+    {
+
+        $picture->setProduct($this);
+
+        $this->picture->add($picture);
+
+    }
+
+    /**
+     * @param Picture $pictures
+     */
+    public function removePicture(\AppBundle\Entity\Admin\Picture $picture)
+    {
+        $this->picture->removeElement($picture);
+    }
 
     /**
      * Get id
@@ -296,30 +340,9 @@ class Product
         return $this->weightId;
     }
 
-    /**
-     * Set pictureId
-     *
-     * @param \AppBundle\Entity\Admin\Picture $picture
-     *
-     * @return $this
-     */
-    public function setPictureId(\AppBundle\Entity\Admin\Picture $picture = null)
-    {
-        $this->pictureId = $picture;
-
-        return $this;
-    }
 
 
-    /**
-     * Get pictureId
-     *
-     * @return \AppBundle\Entity\Admin\Picture
-     */
-    public function getPictureId()
-    {
-        return $this->pictureId;
-    }
+
 
 
 }

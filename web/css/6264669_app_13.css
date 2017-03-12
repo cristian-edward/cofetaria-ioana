@@ -71,6 +71,10 @@ table.impx-calendar td a,
 ul.dropdown-mega-sub-nav > li > a {
     width: 150px;
 }
+img.admin-preview {
+    max-height: 200px;
+    max-width: 200px;
+}
 @media (max-width: 991px){
     div.uk-width-xlarge-1-2.uk-width-large-1-2.uk-width-medium-2-3.uk-width-small-1-1.uk-margin-double-large-top {
         margin: 0 auto;

@@ -2,46 +2,28 @@
 
 namespace AppBundle\Admin;
 
+use AppBundle\Entity\Admin\Picture;
+use AppBundle\Entity\Admin\Product;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Symfony\Component\HttpFoundation\Request;
 
 class ProductAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'SonataPageBundle';
 
+
     #These lines configure which fields are displayed on the edit and create actions. The FormMapper behaves similar to the FormBuilder of the Symfony Form component;
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
-        // get the current Image instance
-        $image = $this->getSubject();
-
-        // use $fileFieldOptions so we can add other options to the field
-        $fileFieldOptions = array('required' => false);
-        if ($image && ($webPath = $image->getWebPath())) {
-            // get the container so the full path to the image can be set
-            $container = $this->getConfigurationPool()->getContainer();
-            $request = Request::createFromGlobals()->getBasePath();
-            $fullPath = $request.'/'.$webPath;
-
-            // add a 'help' option containing the preview's img tag
-            $fileFieldOptions['help'] = '<img src="'.$fullPath.'" class="admin-preview" />';
-        }
-        #dump($fullPath);
-        #die();
         $formMapper
            /* ->tab('Product')*/
-                ->with('Description')
-                    ->add('title', null,  [], [
-                        'translation_domain' => 'SonataPageBundle',
-                    ])
-                    ->add('shortDescription', null, [], [
-                        'translation_domain' => 'SonataPageBundle',
-                    ])
+                ->with('Description', ['class' => 'col-md-8'])
+                    ->add('title', null,  [])
+                    ->add('shortDescription')
                     ->add('longDescription')
                   #  ->add('alt')
                     ->add('weightId', null, [ 'label' => 'Weight' ])
@@ -50,10 +32,14 @@ class ProductAdmin extends AbstractAdmin
                 ->end()
            /* ->end()
             ->tab('Photo')*/
-                ->with('Photo')
-                 #   ->add('name')
+                ->with('Photo', ['class' => 'col-md-4'])
+                    ->add('picture', 'entity', [
+                        'class' => 'AppBundle\Entity\Admin\Picture',
+                        'multiple' => true,
+                        'expanded' => true,
+                        'by_reference' => false,
+                    ])
                  #   ->add('file', 'file',  [],  $fileFieldOptions)
-                 #   ->add('isUsed')
                 ->end()
            /* ->end()*/
         ;
@@ -67,25 +53,18 @@ class ProductAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('title', null,  array(
-                'translation_domain' => 'SonataPageBundle',
-            ))
+            ->add('title', null)
             ->add('shortDescription')
             ->add('longDescription')
-          #  ->add('alt')
             ->add('weightId', null, [ 'label' => 'Weight' ])
             ->add('active')
-           # ->add('name')
-           # ->add('isUsed')
         ;
     }
 
     // Fields to be lists
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title', null, array(
-            'translation_domain' => 'SonataPageBundle',
-        ))
+        $listMapper->addIdentifier('title', null)
             ->addIdentifier('shortDescription')
            # ->add('alt')
             ->add('weightId', null, [ 'label' => 'Weight' ])
@@ -105,26 +84,19 @@ class ProductAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('title', null, array(
-                'translation_domain' => 'SonataPageBundle',
-            ))
+            ->add('title')
             ->add('categoryId', null, ['label' => 'Category'])
             ->add('shortDescription')
             ->add('longDescription')
-           # ->add('alt')
             ->add('weightId', null, [ 'label' => 'Weight' ])
             ->add('active')
-          #  ->add('name')
-            /*->add('path', null, [
+            ->add('picture', 'collection', [
                 'template' => 'AppBundle:Admin:list_image.html.twig',
-                'label' => 'Picture'
-            ])*/
-           # ->add('isUsed')
+            ])
+       ; 
 
-          # ->add('slug')
-           #->add('author')
-       ;
     }
+
 
 
 }
