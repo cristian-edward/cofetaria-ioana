@@ -21,10 +21,10 @@ class PictureAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('tip')
             ->add('name')
-            ->add('file', 'file')
             ->add('seoLink')
+            ->add('filter')
+            ->add('file', 'file')
             ->add('isUsed')
         ;
     }
@@ -36,9 +36,9 @@ class PictureAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('tip')
             ->add('name')
             ->add('seoLink')
+            ->add('filter')
             ->add('isUsed')
         ;
     }
@@ -50,9 +50,9 @@ class PictureAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('tip')
             ->add('name')
             ->add('seoLink')
+            ->add('filter')
             ->add('isUsed')
             ->add('_action', null, array(
                 'actions' => array(
@@ -73,12 +73,12 @@ class PictureAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('tip')
             ->add('name')
+            ->add('seoLink')
+            ->add('filter')
             ->add('path', null, [
                 'template' => 'AppBundle:Admin:list_image.html.twig',
             ])
-            ->add('seoLink')
             ->add('isUsed')
         ;
     }

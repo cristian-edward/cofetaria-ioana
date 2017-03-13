@@ -30,10 +30,10 @@ class Picture
     private $temp;
 
     /**
-     * @ORM\Column(name="tip", type="string", length=255)
+     * @ORM\Column(name="filter", type="string", length=30)
      *
      */
-    protected $tip;
+    protected $filter;
 
     /**
      * @var string
@@ -74,8 +74,7 @@ class Picture
      * @ORM\Column(name="is_used", type="boolean", nullable=true)
      */
     protected $isUsed;
-#@ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Product", mappedBy="picture", cascade={"persist"})
-#* @ORM\JoinColumn(name="product_id", referencedColumnName="id")
+
     /**
      * @var product
      *
@@ -130,17 +129,17 @@ class Picture
     /**
      * @return mixed
      */
-    public function getTip()
+    public function getFilter()
     {
-        return $this->tip;
+        return $this->filter;
     }
 
     /**
      * @param mixed $tip
      */
-    public function setTip($tip)
+    public function setFilter($filter)
     {
-        $this->tip = $tip;
+        $this->filter = $filter;
     }
 
     /**

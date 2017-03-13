@@ -75,8 +75,8 @@
                 <target>Listă greutate produs</target>
             </trans-unit>
             <trans-unit id="label_description">
-                <source>Description</source>
-                <target>Descriere</target>
+                <source>Product description</source>
+                <target>Descriera produsului</target>
             </trans-unit>
             <trans-unit id="label_photo">
                 <source>Photo</source>
@@ -85,6 +85,10 @@
             <trans-unit id="label_nameofsubcategory">
                 <source>Name of subcategory</source>
                 <target>Numele subcategoriei</target>
+            </trans-unit>
+            <trans-unit id="label_picture">
+                <source>Picture</source>
+                <target>Poze</target>
             </trans-unit>
         </body>
   </file>

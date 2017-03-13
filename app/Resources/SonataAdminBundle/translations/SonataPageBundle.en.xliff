@@ -75,8 +75,8 @@
                 <target>Weight List</target>
             </trans-unit>
             <trans-unit id="label_description">
-                <source>Description</source>
-                <target>Description</target>
+                <source>Product description</source>
+                <target>Product description</target>
             </trans-unit>
             <trans-unit id="label_photo">
                 <source>Photo</source>
@@ -85,6 +85,10 @@
             <trans-unit id="label_nameofsubcategory">
                 <source>Name of subcategory</source>
                 <target>Name of subcategory</target>
+            </trans-unit>
+            <trans-unit id="label_picture">
+                <source>Picture</source>
+                <target>Picture</target>
             </trans-unit>
         </body>
   </file>

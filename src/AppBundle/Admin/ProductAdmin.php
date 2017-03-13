@@ -21,7 +21,7 @@ class ProductAdmin extends AbstractAdmin
     {
         $formMapper
            /* ->tab('Product')*/
-                ->with('Description', ['class' => 'col-md-8'])
+                ->with('Product description', ['class' => 'col-md-8'])
                     ->add('title', null,  [])
                     ->add('shortDescription')
                     ->add('longDescription')
@@ -36,7 +36,7 @@ class ProductAdmin extends AbstractAdmin
                     ->add('picture', 'entity', [
                         'class' => 'AppBundle\Entity\Admin\Picture',
                         'multiple' => true,
-                        'expanded' => true,
+                        'expanded' => false,
                         'by_reference' => false,
                     ])
                  #   ->add('file', 'file',  [],  $fileFieldOptions)
@@ -93,7 +93,7 @@ class ProductAdmin extends AbstractAdmin
             ->add('picture', 'collection', [
                 'template' => 'AppBundle:Admin:list_image.html.twig',
             ])
-       ; 
+       ;
 
     }
 
