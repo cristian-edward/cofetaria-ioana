@@ -24,117 +24,116 @@
     <table id="18" parent="2" name="admin_user"/>
     <table id="19" parent="2" name="admin_weight"/>
     <table id="20" parent="2" name="entity_admin_picture"/>
-    <table id="21" parent="2" name="products_pictures"/>
-    <column id="22" parent="10" name="id">
+    <column id="21" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="23" parent="10" name="class_type">
+    <column id="22" parent="10" name="class_type">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="24" parent="10" name="UNIQ_69DD750638A36066">
+    <index id="23" parent="10" name="UNIQ_69DD750638A36066">
       <ColNames>class_type</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="25" parent="10" name="PRIMARY">
+    <key id="24" parent="10" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="26" parent="10" name="UNIQ_69DD750638A36066">
+    <key id="25" parent="10" name="UNIQ_69DD750638A36066">
       <ColNames>class_type</ColNames>
       <UnderlyingIndexName>UNIQ_69DD750638A36066</UnderlyingIndexName>
     </key>
-    <column id="27" parent="11" name="id">
+    <column id="26" parent="11" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="28" parent="11" name="class_id">
+    <column id="27" parent="11" name="class_id">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="11" name="object_identity_id">
+    <column id="28" parent="11" name="object_identity_id">
       <Position>3</Position>
       <DataType>int(10) unsigned|0</DataType>
     </column>
-    <column id="30" parent="11" name="security_identity_id">
+    <column id="29" parent="11" name="security_identity_id">
       <Position>4</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="11" name="field_name">
+    <column id="30" parent="11" name="field_name">
       <Position>5</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="32" parent="11" name="ace_order">
+    <column id="31" parent="11" name="ace_order">
       <Position>6</Position>
       <DataType>smallint(5) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="11" name="mask">
+    <column id="32" parent="11" name="mask">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="11" name="granting">
+    <column id="33" parent="11" name="granting">
       <Position>8</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="35" parent="11" name="granting_strategy">
+    <column id="34" parent="11" name="granting_strategy">
       <Position>9</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="11" name="audit_success">
+    <column id="35" parent="11" name="audit_success">
       <Position>10</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="11" name="audit_failure">
+    <column id="36" parent="11" name="audit_failure">
       <Position>11</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="38" parent="11" name="IDX_46C8B8063D9AB4A6">
+    <index id="37" parent="11" name="IDX_46C8B8063D9AB4A6">
       <ColNames>object_identity_id</ColNames>
     </index>
-    <index id="39" parent="11" name="IDX_46C8B806DF9183C9">
+    <index id="38" parent="11" name="IDX_46C8B806DF9183C9">
       <ColNames>security_identity_id</ColNames>
     </index>
-    <index id="40" parent="11" name="IDX_46C8B806EA000B10">
+    <index id="39" parent="11" name="IDX_46C8B806EA000B10">
       <ColNames>class_id</ColNames>
     </index>
-    <index id="41" parent="11" name="IDX_46C8B806EA000B103D9AB4A6DF9183C9">
+    <index id="40" parent="11" name="IDX_46C8B806EA000B103D9AB4A6DF9183C9">
       <ColNames>class_id
 object_identity_id
 security_identity_id</ColNames>
     </index>
-    <index id="42" parent="11" name="UNIQ_46C8B806EA000B103D9AB4A64DEF17BCE4289BF4">
+    <index id="41" parent="11" name="UNIQ_46C8B806EA000B103D9AB4A64DEF17BCE4289BF4">
       <ColNames>class_id
 object_identity_id
 field_name
 ace_order</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="43" parent="11" name="PRIMARY">
+    <key id="42" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="44" parent="11" name="UNIQ_46C8B806EA000B103D9AB4A64DEF17BCE4289BF4">
+    <key id="43" parent="11" name="UNIQ_46C8B806EA000B103D9AB4A64DEF17BCE4289BF4">
       <ColNames>class_id
 object_identity_id
 field_name
 ace_order</ColNames>
       <UnderlyingIndexName>UNIQ_46C8B806EA000B103D9AB4A64DEF17BCE4289BF4</UnderlyingIndexName>
     </key>
-    <foreign-key id="45" parent="11" name="FK_46C8B806EA000B10">
+    <foreign-key id="44" parent="11" name="FK_46C8B806EA000B10">
       <ColNames>class_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>acl_classes</RefTableName>
@@ -143,7 +142,7 @@ ace_order</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <foreign-key id="46" parent="11" name="FK_46C8B8063D9AB4A6">
+    <foreign-key id="45" parent="11" name="FK_46C8B8063D9AB4A6">
       <ColNames>object_identity_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>acl_object_identities</RefTableName>
@@ -152,7 +151,7 @@ ace_order</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <foreign-key id="47" parent="11" name="FK_46C8B806DF9183C9">
+    <foreign-key id="46" parent="11" name="FK_46C8B806DF9183C9">
       <ColNames>security_identity_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>acl_security_identities</RefTableName>
@@ -161,77 +160,77 @@ ace_order</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <column id="48" parent="12" name="id">
+    <column id="47" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="49" parent="12" name="parent_object_identity_id">
+    <column id="48" parent="12" name="parent_object_identity_id">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
     </column>
-    <column id="50" parent="12" name="class_id">
+    <column id="49" parent="12" name="class_id">
       <Position>3</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="51" parent="12" name="object_identifier">
+    <column id="50" parent="12" name="object_identifier">
       <Position>4</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="52" parent="12" name="entries_inheriting">
+    <column id="51" parent="12" name="entries_inheriting">
       <Position>5</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="53" parent="12" name="IDX_9407E54977FA751A">
+    <index id="52" parent="12" name="IDX_9407E54977FA751A">
       <ColNames>parent_object_identity_id</ColNames>
     </index>
-    <index id="54" parent="12" name="UNIQ_9407E5494B12AD6EA000B10">
+    <index id="53" parent="12" name="UNIQ_9407E5494B12AD6EA000B10">
       <ColNames>object_identifier
 class_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="55" parent="12" name="PRIMARY">
+    <key id="54" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="56" parent="12" name="UNIQ_9407E5494B12AD6EA000B10">
+    <key id="55" parent="12" name="UNIQ_9407E5494B12AD6EA000B10">
       <ColNames>object_identifier
 class_id</ColNames>
       <UnderlyingIndexName>UNIQ_9407E5494B12AD6EA000B10</UnderlyingIndexName>
     </key>
-    <foreign-key id="57" parent="12" name="FK_9407E54977FA751A">
+    <foreign-key id="56" parent="12" name="FK_9407E54977FA751A">
       <ColNames>parent_object_identity_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>acl_object_identities</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="58" parent="13" name="object_identity_id">
+    <column id="57" parent="13" name="object_identity_id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="59" parent="13" name="ancestor_id">
+    <column id="58" parent="13" name="ancestor_id">
       <Position>2</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="60" parent="13" name="IDX_825DE2993D9AB4A6">
+    <index id="59" parent="13" name="IDX_825DE2993D9AB4A6">
       <ColNames>object_identity_id</ColNames>
     </index>
-    <index id="61" parent="13" name="IDX_825DE299C671CEA1">
+    <index id="60" parent="13" name="IDX_825DE299C671CEA1">
       <ColNames>ancestor_id</ColNames>
     </index>
-    <key id="62" parent="13" name="PRIMARY">
+    <key id="61" parent="13" name="PRIMARY">
       <ColNames>object_identity_id
 ancestor_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="63" parent="13" name="FK_825DE2993D9AB4A6">
+    <foreign-key id="62" parent="13" name="FK_825DE2993D9AB4A6">
       <ColNames>object_identity_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>acl_object_identities</RefTableName>
@@ -240,7 +239,7 @@ ancestor_id</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <foreign-key id="64" parent="13" name="FK_825DE299C671CEA1">
+    <foreign-key id="63" parent="13" name="FK_825DE299C671CEA1">
       <ColNames>ancestor_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>acl_object_identities</RefTableName>
@@ -249,346 +248,349 @@ ancestor_id</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <column id="65" parent="14" name="id">
+    <column id="64" parent="14" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="66" parent="14" name="identifier">
+    <column id="65" parent="14" name="identifier">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="67" parent="14" name="username">
+    <column id="66" parent="14" name="username">
       <Position>3</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="68" parent="14" name="UNIQ_8835EE78772E836AF85E0677">
+    <index id="67" parent="14" name="UNIQ_8835EE78772E836AF85E0677">
       <ColNames>identifier
 username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="69" parent="14" name="PRIMARY">
+    <key id="68" parent="14" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="70" parent="14" name="UNIQ_8835EE78772E836AF85E0677">
+    <key id="69" parent="14" name="UNIQ_8835EE78772E836AF85E0677">
       <ColNames>identifier
 username</ColNames>
       <UnderlyingIndexName>UNIQ_8835EE78772E836AF85E0677</UnderlyingIndexName>
     </key>
-    <column id="71" parent="15" name="id">
+    <column id="70" parent="15" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="72" parent="15" name="name">
+    <column id="71" parent="15" name="name">
       <Position>2</Position>
       <DataType>varchar(15)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="73" parent="15" name="link">
+    <column id="72" parent="15" name="link">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="74" parent="15" name="active">
+    <column id="73" parent="15" name="active">
       <Position>4</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="75" parent="15" name="create_at">
+    <column id="74" parent="15" name="create_at">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="76" parent="15" name="update_at">
+    <column id="75" parent="15" name="update_at">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="77" parent="15" name="UNIQ_92EC1EC75E237E06">
+    <index id="76" parent="15" name="UNIQ_92EC1EC75E237E06">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="78" parent="15" name="PRIMARY">
+    <key id="77" parent="15" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="79" parent="15" name="UNIQ_92EC1EC75E237E06">
+    <key id="78" parent="15" name="UNIQ_92EC1EC75E237E06">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>UNIQ_92EC1EC75E237E06</UnderlyingIndexName>
     </key>
-    <column id="80" parent="16" name="id">
+    <column id="79" parent="16" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="81" parent="16" name="weight_id">
+    <column id="80" parent="16" name="weight_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="82" parent="16" name="title">
+    <column id="81" parent="16" name="title">
       <Position>3</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="83" parent="16" name="short_description">
+    <column id="82" parent="16" name="short_description">
       <Position>4</Position>
       <DataType>varchar(150)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="84" parent="16" name="long_description">
+    <column id="83" parent="16" name="long_description">
       <Position>5</Position>
       <DataType>longtext|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="85" parent="16" name="active">
+    <column id="84" parent="16" name="active">
       <Position>6</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="86" parent="16" name="create_at">
+    <column id="85" parent="16" name="create_at">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="87" parent="16" name="update_at">
+    <column id="86" parent="16" name="update_at">
       <Position>8</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="88" parent="16" name="category_id">
+    <column id="87" parent="16" name="category_id">
       <Position>9</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="89" parent="16" name="IDX_1776862412469DE2">
+    <index id="88" parent="16" name="IDX_1776862412469DE2">
       <ColNames>category_id</ColNames>
     </index>
-    <index id="90" parent="16" name="IDX_17768624350035DC">
+    <index id="89" parent="16" name="IDX_17768624350035DC">
       <ColNames>weight_id</ColNames>
     </index>
-    <key id="91" parent="16" name="PRIMARY">
+    <key id="90" parent="16" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="92" parent="16" name="FK_17768624350035DC">
+    <foreign-key id="91" parent="16" name="FK_17768624350035DC">
       <ColNames>weight_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>admin_weight</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="93" parent="16" name="FK_1776862412469DE2">
+    <foreign-key id="92" parent="16" name="FK_1776862412469DE2">
       <ColNames>category_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>admin_category</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="94" parent="17" name="id">
+    <column id="93" parent="17" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="95" parent="17" name="category_id">
+    <column id="94" parent="17" name="category_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="96" parent="17" name="name">
+    <column id="95" parent="17" name="name">
       <Position>3</Position>
       <DataType>varchar(35)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="97" parent="17" name="link">
+    <column id="96" parent="17" name="link">
       <Position>4</Position>
       <DataType>varchar(35)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="98" parent="17" name="create_at">
+    <column id="97" parent="17" name="create_at">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="99" parent="17" name="update_at">
+    <column id="98" parent="17" name="update_at">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="100" parent="17" name="IDX_90C6ED4112469DE2">
+    <index id="99" parent="17" name="IDX_90C6ED4112469DE2">
       <ColNames>category_id</ColNames>
     </index>
-    <key id="101" parent="17" name="PRIMARY">
+    <key id="100" parent="17" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="102" parent="17" name="FK_90C6ED4112469DE2">
+    <foreign-key id="101" parent="17" name="FK_90C6ED4112469DE2">
       <ColNames>category_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>admin_category</RefTableName>
       <RefKeyName>PRIMARY</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="103" parent="18" name="id">
+    <column id="102" parent="18" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="104" parent="18" name="username">
+    <column id="103" parent="18" name="username">
       <Position>2</Position>
       <DataType>varchar(180)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="105" parent="18" name="username_canonical">
+    <column id="104" parent="18" name="username_canonical">
       <Position>3</Position>
       <DataType>varchar(180)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="106" parent="18" name="email">
+    <column id="105" parent="18" name="email">
       <Position>4</Position>
       <DataType>varchar(180)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="107" parent="18" name="email_canonical">
+    <column id="106" parent="18" name="email_canonical">
       <Position>5</Position>
       <DataType>varchar(180)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="108" parent="18" name="enabled">
+    <column id="107" parent="18" name="enabled">
       <Position>6</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="109" parent="18" name="salt">
+    <column id="108" parent="18" name="salt">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="110" parent="18" name="password">
+    <column id="109" parent="18" name="password">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="111" parent="18" name="last_login">
+    <column id="110" parent="18" name="last_login">
       <Position>9</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="112" parent="18" name="confirmation_token">
+    <column id="111" parent="18" name="confirmation_token">
       <Position>10</Position>
       <DataType>varchar(180)|0</DataType>
     </column>
-    <column id="113" parent="18" name="password_requested_at">
+    <column id="112" parent="18" name="password_requested_at">
       <Position>11</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <column id="114" parent="18" name="roles">
+    <column id="113" parent="18" name="roles">
       <Position>12</Position>
       <Comment>(DC2Type:array)</Comment>
       <DataType>longtext|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="115" parent="18" name="locale">
+    <column id="114" parent="18" name="locale">
       <Position>13</Position>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <index id="116" parent="18" name="UNIQ_AD8A54A992FC23A8">
+    <index id="115" parent="18" name="UNIQ_AD8A54A992FC23A8">
       <ColNames>username_canonical</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="117" parent="18" name="UNIQ_AD8A54A9A0D96FBF">
+    <index id="116" parent="18" name="UNIQ_AD8A54A9A0D96FBF">
       <ColNames>email_canonical</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="118" parent="18" name="UNIQ_AD8A54A9C05FB297">
+    <index id="117" parent="18" name="UNIQ_AD8A54A9C05FB297">
       <ColNames>confirmation_token</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="119" parent="18" name="PRIMARY">
+    <key id="118" parent="18" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="120" parent="18" name="UNIQ_AD8A54A992FC23A8">
+    <key id="119" parent="18" name="UNIQ_AD8A54A992FC23A8">
       <ColNames>username_canonical</ColNames>
       <UnderlyingIndexName>UNIQ_AD8A54A992FC23A8</UnderlyingIndexName>
     </key>
-    <key id="121" parent="18" name="UNIQ_AD8A54A9A0D96FBF">
+    <key id="120" parent="18" name="UNIQ_AD8A54A9A0D96FBF">
       <ColNames>email_canonical</ColNames>
       <UnderlyingIndexName>UNIQ_AD8A54A9A0D96FBF</UnderlyingIndexName>
     </key>
-    <key id="122" parent="18" name="UNIQ_AD8A54A9C05FB297">
+    <key id="121" parent="18" name="UNIQ_AD8A54A9C05FB297">
       <ColNames>confirmation_token</ColNames>
       <UnderlyingIndexName>UNIQ_AD8A54A9C05FB297</UnderlyingIndexName>
     </key>
-    <column id="123" parent="19" name="id">
+    <column id="122" parent="19" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="124" parent="19" name="weight">
+    <column id="123" parent="19" name="weight">
       <Position>2</Position>
       <DataType>varchar(7)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="125" parent="19" name="create_at">
+    <column id="124" parent="19" name="create_at">
       <Position>3</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="126" parent="19" name="update_at">
+    <column id="125" parent="19" name="update_at">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="127" parent="19" name="PRIMARY">
+    <key id="126" parent="19" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="128" parent="20" name="id">
+    <column id="127" parent="20" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="129" parent="20" name="tip">
+    <column id="128" parent="20" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="130" parent="20" name="name">
+    <column id="129" parent="20" name="path">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="131" parent="20" name="path">
+    <column id="130" parent="20" name="seo_link">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="132" parent="20" name="seo_link">
-      <Position>5</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="133" parent="20" name="is_used">
-      <Position>6</Position>
+    <column id="131" parent="20" name="is_used">
+      <Position>5</Position>
       <DataType>tinyint(1)|0</DataType>
     </column>
-    <column id="134" parent="20" name="create_at">
+    <column id="132" parent="20" name="create_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="20" name="update_at">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="135" parent="20" name="update_at">
+    <column id="134" parent="20" name="product_id">
       <Position>8</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="135" parent="20" name="filter">
+      <Position>9</Position>
+      <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="136" parent="20" name="product_id">
-      <Position>9</Position>
+    <column id="136" parent="20" name="subcategory_id">
+      <Position>10</Position>
       <DataType>int(11)|0</DataType>
     </column>
     <index id="137" parent="20" name="IDX_F34C610C4584665A">
@@ -598,56 +600,27 @@ username</ColNames>
       <ColNames>seo_link</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="139" parent="20" name="PRIMARY">
+    <index id="139" parent="20" name="IDX_F34C610C5DC6FE57">
+      <ColNames>subcategory_id</ColNames>
+    </index>
+    <key id="140" parent="20" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="140" parent="20" name="UNIQ_F34C610CCA7A8920">
+    <key id="141" parent="20" name="UNIQ_F34C610CCA7A8920">
       <ColNames>seo_link</ColNames>
       <UnderlyingIndexName>UNIQ_F34C610CCA7A8920</UnderlyingIndexName>
     </key>
-    <foreign-key id="141" parent="20" name="FK_F34C610C4584665A">
+    <foreign-key id="142" parent="20" name="FK_F34C610C4584665A">
       <ColNames>product_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
       <RefTableName>admin_product</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="142" parent="21" name="product_id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="143" parent="21" name="pictures_id">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="144" parent="21" name="IDX_9A7D3F734584665A">
-      <ColNames>product_id</ColNames>
-    </index>
-    <index id="145" parent="21" name="UNIQ_9A7D3F73BC415685">
-      <ColNames>pictures_id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="146" parent="21" name="PRIMARY">
-      <ColNames>product_id
-pictures_id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="147" parent="21" name="UNIQ_9A7D3F73BC415685">
-      <ColNames>pictures_id</ColNames>
-      <UnderlyingIndexName>UNIQ_9A7D3F73BC415685</UnderlyingIndexName>
-    </key>
-    <foreign-key id="148" parent="21" name="FK_9A7D3F734584665A">
-      <ColNames>product_id</ColNames>
+    <foreign-key id="143" parent="20" name="FK_F34C610C5DC6FE57">
+      <ColNames>subcategory_id</ColNames>
       <RefSchemaName>cofetaria_ioana</RefSchemaName>
-      <RefTableName>admin_product</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="149" parent="21" name="FK_9A7D3F73BC415685">
-      <ColNames>pictures_id</ColNames>
-      <RefSchemaName>cofetaria_ioana</RefSchemaName>
-      <RefTableName>entity_admin_picture</RefTableName>
+      <RefTableName>admin_subcategory</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>

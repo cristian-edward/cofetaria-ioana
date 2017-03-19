@@ -30,11 +30,18 @@ class SubcategoryAdmin extends AbstractAdmin
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', null, [
+        $formMapper
+            ->add('name', null, [
                         'label' => 'Name of subcategory'
                     ])
                    ->add('category')
-                   ->add('link');
+            ->add('picture', 'entity', [
+                'class' => 'AppBundle\Entity\Admin\Picture',
+                'multiple' => true,
+                'expanded' => false,
+                'by_reference' => false,
+            ])
+            ->add('link');
     }
 
     // Fields to be shown on filter forms
@@ -66,6 +73,9 @@ class SubcategoryAdmin extends AbstractAdmin
     {
         $showMapper->add('name')
             ->add('category')
+            ->add('picture', 'collection', [
+                'template' => 'AppBundle:Admin:list_image.html.twig',
+            ])
             ->add('link');
 
     }

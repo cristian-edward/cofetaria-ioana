@@ -47,7 +47,7 @@ class Subcategory
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Picture", mappedBy="subcategory", cascade={"persist"})
      */
-    protected $picture;
+    protected $pictureSubCat;
 
     /**
      * @var datetime
@@ -200,19 +200,19 @@ class Subcategory
      */
     public function getPicture()
     {
-        return $this->picture;
+        return $this->pictureSubCat;
     }
 
-    public function addPicture(Picture $picture)
+    public function addPictureSubCat(Picture $picture)
     {
         $picture->setSubcategory($this);
 
-        $this->picture->add($picture);
+        $this->pictureSubCat->add($picture);
     }
 
-    public function removePicture(Picture $picture)
+    public function removePictureSubCat(Picture $picture)
     {
-        $this->picture->removeElement($picture);
+        $this->pictureSubCat->removeElement($picture);
     }
 
 }
