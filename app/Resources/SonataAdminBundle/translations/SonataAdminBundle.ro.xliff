@@ -494,6 +494,22 @@
                 <source>User</source>
                 <target>Conturi useri</target>
             </trans-unit>
+            <trans-unit id="label_choose_a_filter">
+                <source>Choose a filter</source>
+                <target>Selectează un filtru</target>
+            </trans-unit>
+            <trans-unit id="frontEnd_menu">
+                <source>Filter menu</source>
+                <target>Filtru meniu</target>
+            </trans-unit>
+            <trans-unit id="frontEnd_image">
+                <source>Filter picture</source>
+                <target>Filtru poze</target>
+            </trans-unit>
+            <trans-unit id="admin_product_image">
+                <source>Filter backend</source>
+                <target>Filtru administrare</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

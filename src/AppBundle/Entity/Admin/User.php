@@ -4,6 +4,7 @@ namespace AppBundle\Entity\Admin;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Intl\Locale\Locale;
 
 /**
  * User
@@ -25,7 +26,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="locale", type="string")
+     * @ORM\Column(name="locale", type="string", nullable=true)
      */
     protected $locale;
 
@@ -47,6 +48,7 @@ class User extends BaseUser
      */
     public function setLocale($locale)
     {
+
         $this->locale = $locale;
     }
 }

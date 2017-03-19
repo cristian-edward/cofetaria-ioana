@@ -19,7 +19,17 @@
 
                         {% for field_name in form_group.fields  if admin.formfielddescriptions[field_name] is defined %}
                             {#{% set form_group.translation_domain = 'SonataAdminBundle' %}#}
+                            {%  if form[field_name].vars["sonata_admin"]["field_description"].help is defined and form[field_name].vars["sonata_admin"]["field_description"].help|length > 2 %}
+                                <div class="admin-preview">
+                                    <a href="{{ asset(form[field_name].vars["sonata_admin"]["field_description"].help) }}">
+                                        {{ asset(form[field_name].vars["sonata_admin"]["field_description"].help) | replace({"/assets/images/uploads/products/": " "}) }}
+                                        <img src="{{ asset(form[field_name].vars["sonata_admin"]["field_description"].help) }}"  />
+                                    </a>
+                                </div>
 
+                            {% endif %}
+
+                            {#{{ dump(form.children[field_name].vars["label"]) }}#}
                             {{ form_row(form[field_name],{"label": form.children[field_name].vars["label"]|trans({}, 'SonataPageBundle')}) }}
                         {% else %}
                             <em>{{ 'message_form_group_empty'|trans({}, 'SonataAdminBundle') }}</em>

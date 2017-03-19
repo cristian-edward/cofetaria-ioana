@@ -494,6 +494,22 @@
                 <source>User</source>
                 <target>User</target>
             </trans-unit>
+            <trans-unit id="label_choose_a_filter">
+                <source>Choose a filter</source>
+                <target>Choose a filter</target>
+            </trans-unit>
+            <trans-unit id="frontEnd_menu">
+                <source>Filter menu</source>
+                <target>Filter menu</target>
+            </trans-unit>
+            <trans-unit id="frontEnd_image">
+                <source>Filter picture</source>
+                <target>Filter picture</target>
+            </trans-unit>
+            <trans-unit id="admin_product_image">
+                <source>Filter backend</source>
+                <target>Filter backend</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

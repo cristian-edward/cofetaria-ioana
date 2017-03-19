@@ -65,8 +65,6 @@ class Product
      * @ORM\JoinColumn(name="weight_id", referencedColumnName="id")
      */
     protected $weightId;
-#@ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Picture", inversedBy="product", cascade={"persist"})
-#* @ORM\JoinColumn(name="product_id", referencedColumnName="id")
 
     /**
      *
@@ -247,7 +245,7 @@ class Product
      *
      * @return Product
      */
-    public function setCategoryId(\AppBundle\Entity\Admin\Category $categoryId = null)
+    public function setCategoryId(\AppBundle\Entity\Admin\Category $categoryId = NULL)
     {
         $this->categoryId = $categoryId;
 
@@ -314,7 +312,7 @@ class Product
     {
         return $this->updateAt;
     }
-    
+
 
     /**
      * Set weightId
@@ -323,7 +321,7 @@ class Product
      *
      * @return Product
      */
-    public function setWeightId(\AppBundle\Entity\Admin\Weight $weightId = null)
+    public function setWeightId(\AppBundle\Entity\Admin\Weight $weightId = NULL)
     {
         $this->weightId = $weightId;
 
@@ -339,10 +337,6 @@ class Product
     {
         return $this->weightId;
     }
-
-
-
-
 
 
 }

@@ -20,13 +20,44 @@ class PictureAdmin extends AbstractAdmin
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
+        if($this->hasParentFieldDescription()) { // this Admin is embedded
+            // $getter will be something like 'getlogoImage'
+            $getter = 'get' . $this->getParentFieldDescription()->getFieldName();
+
+            // get hold of the parent object
+            $parent = $this->getParentFieldDescription()->getAdmin()->getSubject();
+            if ($parent) {
+                $image = $parent->$getter();
+            } else {
+                $image = null;
+            }
+        } else {
+            $image = $this->getSubject();
+        }
+
+        // use $fileFieldOptions so we can add other options to the field
+        $fileFieldOptions = array('required' => true);
+        if ($image && ($webPath = $image->getWebPath())) {
+            // add a 'help' option containing the preview's img tag
+            $fileFieldOptions = array('required' => false);
+            $fileFieldOptions['help'] = $webPath;
+        }
+
         $formMapper
             ->add('name')
             ->add('seoLink')
-            ->add('filter')
-            ->add('file', 'file')
-            ->add('isUsed')
-        ;
+            ->add('filter', 'choice', [
+                'choices'                   => [
+                    'Filter menu'    => 'frontEnd_menu',
+                    'Filter picture' => 'frontEnd_image',
+                    'Filter backend' => 'admin_product_image',
+                ],
+                'placeholder'               => 'Choose a filter',
+                'choice_translation_domain' => TRUE,
+                'translation_domain'        => 'SonataAdminBundle',
+            ])
+            ->add('file', 'file', $fileFieldOptions)
+            ->add('isUsed');
     }
 
     /**
@@ -39,8 +70,7 @@ class PictureAdmin extends AbstractAdmin
             ->add('name')
             ->add('seoLink')
             ->add('filter')
-            ->add('isUsed')
-        ;
+            ->add('isUsed');
     }
 
     /**
@@ -54,14 +84,13 @@ class PictureAdmin extends AbstractAdmin
             ->add('seoLink')
             ->add('filter')
             ->add('isUsed')
-            ->add('_action', null, array(
-                'actions' => array(
-                    'show' => array(),
-                    'edit' => array(),
-                    'delete' => array(),
-                )
-            ))
-        ;
+            ->add('_action', NULL, [
+                'actions' => [
+                    'show'   => [],
+                    'edit'   => [],
+                    'delete' => [],
+                ],
+            ]);
     }
 
 
@@ -76,10 +105,9 @@ class PictureAdmin extends AbstractAdmin
             ->add('name')
             ->add('seoLink')
             ->add('filter')
-            ->add('path', null, [
+            ->add('path', NULL, [
                 'template' => 'AppBundle:Admin:list_image.html.twig',
             ])
-            ->add('isUsed')
-        ;
+            ->add('isUsed');
     }
 }

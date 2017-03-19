@@ -82,6 +82,24 @@
 .display-block {
     display: block;
 }
+.admin-preview{
+    position: relative;
+    display: inline-block;
+}
+.admin-preview a img {
+    display: none;
+    visibility: hidden;
+}
+.admin-preview a:hover  img {
+    position: absolute;
+    right: 0;
+    display: block;
+    visibility: visible;
+    max-width: 150px;
+    max-height: 150px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
 @media screen and (min-width: 768px) {
 
     .section-white {

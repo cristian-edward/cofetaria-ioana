@@ -103,9 +103,8 @@ class Picture
      */
     public function __toString()
     {
-       return $this->name;
+        return $this->name;
     }
-
 
 
     /**
@@ -221,14 +220,14 @@ class Picture
      *
      * @return Picture
      */
-    public function setFile(UploadedFile $file = null)
+    public function setFile(UploadedFile $file = NULL)
     {
         $this->file = $file;
         // check if we have an old image path
         if (is_file($this->getAbsolutePath())) {
             // store the old name to delete after the update
             $this->temp = $this->getAbsolutePath();
-            $this->path = null;
+            $this->path = NULL;
         } else {
             $this->path = 'initial';
         }
@@ -335,7 +334,7 @@ class Picture
      */
     public function preUpload()
     {
-        if (null !== $this->getFile()) {
+        if (NULL !== $this->getFile()) {
 
             //  $this->getFile()->getClientOriginalName() is not clean so first: CLEAN IT!
 
@@ -349,7 +348,7 @@ class Picture
      */
     public function upload()
     {
-        if (null === $this->getFile()) {
+        if (NULL === $this->getFile()) {
             return;
         }
 
@@ -358,7 +357,7 @@ class Picture
             // delete the old image
             unlink($this->temp);
             // clear the temp image path
-            $this->temp = null;
+            $this->temp = NULL;
         }
 
         // you must throw an exception here if the file cannot be moved
@@ -369,7 +368,7 @@ class Picture
             $this->path
         );
 
-        $this->setFile(null);
+        $this->setFile(NULL);
     }
 
     /**
@@ -392,15 +391,15 @@ class Picture
 
     public function getAbsolutePath()
     {
-        return null === $this->path
-            ? null
+        return NULL === $this->path
+            ? NULL
             : $this->getUploadRootDir() . '/' . $this->path;
     }
 
     public function getWebPath()
     {
-        return null === $this->path
-            ? null
+        return NULL === $this->path
+            ? NULL
             : $this->getUploadDir() . '/' . $this->path;
     }
 
@@ -421,7 +420,8 @@ class Picture
     /**
      * Updates the hash value to force the preUpdate and postUpdate events to fire
      */
-    public function refreshUpdated() {
+    public function refreshUpdated()
+    {
         $this->setUpdateAt();
     }
 

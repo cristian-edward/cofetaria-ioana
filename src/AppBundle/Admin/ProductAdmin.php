@@ -20,17 +20,16 @@ class ProductAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-           /* ->tab('Product')*/
+//            ->tab('Product')
                 ->with('Product description', ['class' => 'col-md-8'])
                     ->add('title', null,  [])
                     ->add('shortDescription')
                     ->add('longDescription')
-                  #  ->add('alt')
                     ->add('weightId', null, [ 'label' => 'Weight' ])
                     ->add('categoryId', null, [ 'label' => 'Category' ])
                     ->add('active')
                 ->end()
-           /* ->end()
+            /*->end()
             ->tab('Photo')*/
                 ->with('Photo', ['class' => 'col-md-4'])
                     ->add('picture', 'entity', [
@@ -41,7 +40,7 @@ class ProductAdmin extends AbstractAdmin
                     ])
                  #   ->add('file', 'file',  [],  $fileFieldOptions)
                 ->end()
-           /* ->end()*/
+//            ->end()
         ;
         //TODO de intrate si vazut cu se face handled pentru imaginea uplodata
 //        https://sonata-project.org/bundles/admin/2-3/doc/cookbook/recipe_file_uploads.html
@@ -64,9 +63,9 @@ class ProductAdmin extends AbstractAdmin
     // Fields to be lists
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title', null)
+        $listMapper
+            ->addIdentifier('title')
             ->addIdentifier('shortDescription')
-           # ->add('alt')
             ->add('weightId', null, [ 'label' => 'Weight' ])
             ->add('active')
             // You may also specify the actions you want to be displayed in the list
