@@ -84,6 +84,12 @@ class Picture
     protected $product;
 
     /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Admin\Subcategory", inversedBy="picture", cascade={"persist"})
+     * @ORM\JoinColumn(name="subcategory_id", referencedColumnName="id")
+     */
+    protected $subcategory;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="create_at", type="datetime")
@@ -438,6 +444,18 @@ class Picture
     public function setProduct(\AppBundle\Entity\Admin\Product $product)
     {
         $this->product = $product;
+
+        return $this;
+    }
+
+    public function getSubcategory()
+    {
+        return $this->subcategory;
+    }
+
+    public function setSubcategory(Subcategory $subcategory)
+    {
+        $this->subcategory = $subcategory;
 
         return $this;
     }

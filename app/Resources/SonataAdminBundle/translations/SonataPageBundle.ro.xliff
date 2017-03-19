@@ -90,6 +90,18 @@
                 <source>Picture</source>
                 <target>Poze</target>
             </trans-unit>
+            <trans-unit id="label_file">
+                <source>File</source>
+                <target>Poză</target>
+            </trans-unit>
+            <trans-unit id="label_seolink">
+                <source>Seo Link</source>
+                <target>Descriere poză</target>
+            </trans-unit>
+            <trans-unit id="label_filter">
+                <source>Filter</source>
+                <target>Filtru(unde se foloseste poza)</target>
+            </trans-unit>
         </body>
   </file>
 </xliff>

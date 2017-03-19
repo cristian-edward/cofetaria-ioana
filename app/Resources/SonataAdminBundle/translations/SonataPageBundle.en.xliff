@@ -90,6 +90,18 @@
                 <source>Picture</source>
                 <target>Picture</target>
             </trans-unit>
+            <trans-unit id="label_file">
+                <source>File</source>
+                <target>File</target>
+            </trans-unit>
+            <trans-unit id="label_seolink">
+                <source>Seo Link</source>
+                <target>Seo Link</target>
+            </trans-unit>
+            <trans-unit id="label_filter">
+                <source>Filter</source>
+                <target>Filter(where you use photo)</target>
+            </trans-unit>
         </body>
   </file>
 </xliff>
