@@ -31,17 +31,21 @@ class SubcategoryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', null, [
-                        'label' => 'Name of subcategory'
-                    ])
-                   ->add('category')
-            ->add('picture', 'entity', [
-                'class' => 'AppBundle\Entity\Admin\Picture',
-                'multiple' => true,
-                'expanded' => false,
-                'by_reference' => false,
-            ])
-            ->add('link');
+            ->with('Subcategory description', ['class' => 'col-md-8'])
+                ->add('name', null, [
+                    'label' => 'Name of subcategory'
+                ])
+                ->add('category')
+                ->add('link')
+            ->end()
+            ->with('Photo', ['class' => 'col-md-4'])
+                ->add('picture', 'entity', [
+                    'class' => 'AppBundle\Entity\Admin\Picture',
+                    'multiple' => true,
+                    'expanded' => false,
+                    'by_reference' => false,
+                ])
+            ->end();
     }
 
     // Fields to be shown on filter forms

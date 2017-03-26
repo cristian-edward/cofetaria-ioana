@@ -46,19 +46,19 @@ gulp.task('js', function () {
 gulp.task('css', function () {
     return gulp.src(
         [
-        'web/assets/css/uikit.min.css',
-        'web/assets/css/components/slideshow.min.css',
-        'web/assets/css/components/slidenav.min.css',
-        'web/assets/css/components/dotnav.min.css',
-        'web/assets/css/components/slider.min.css',
-        'web/assets/css/style.css',
-        'web/assets/css/responsive.css',
-        'web/assets/css/skins/red.css',
-        'web/assets/css/bootstrap.min.css',
-        'web/assets/css/theme/themme/theme-ele.css',
-        'web/assets/css/theements.css',
-        'web/assets/css/default.css',
-        'web/assets/css/app.css'
+            'web/assets/css/uikit.min.css',
+            'web/assets/css/components/slideshow.min.css',
+            'web/assets/css/components/slidenav.min.css',
+            'web/assets/css/components/dotnav.min.css',
+            'web/assets/css/components/slider.min.css',
+            'web/assets/css/style.css',
+            'web/assets/css/responsive.css',
+            'web/assets/css/skins/red.css',
+            'web/assets/css/bootstrap.min.css',
+            'web/assets/css/theme/theme.css',
+            'web/assets/css/theme/theme-elements.css',
+            'web/assets/css/default.css',
+            'web/assets/css/app.css'
         ]
     )
         .pipe(gulpif(/[.]less/, less()))

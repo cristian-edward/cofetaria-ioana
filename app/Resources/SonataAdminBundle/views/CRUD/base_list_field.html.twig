@@ -8,7 +8,7 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 
 #}
-{%  if  app.request.attributes.get('_route') != 'admin_app_admin_product_show' %}
+{%  if ( app.request.attributes.get('_route') != 'admin_app_admin_product_show' and app.request.attributes.get('_route') != 'admin-subcategory_show' ) %}
 <td class="sonata-ba-list-field sonata-ba-list-field-{{ field_description.type }}" objectId="{{ admin.id(object) }}"{% if field_description.options.row_align is defined %} style="text-align:{{ field_description.options.row_align }}"{% endif %}>
 {% endif %}
     {% set route = field_description.options.route.name|default(null) %}
@@ -37,6 +37,6 @@ file that was distributed with this source code.
             {{ block('field') }}
         {% endif %}
     {% endif %}
-{%  if  app.request.attributes.get('_route') != 'admin_app_admin_product_show' %}
+{%  if ( app.request.attributes.get('_route') != 'admin_app_admin_product_show' and app.request.attributes.get('_route') != 'admin-subcategory_show' ) %}
 </td>
 {% endif %}

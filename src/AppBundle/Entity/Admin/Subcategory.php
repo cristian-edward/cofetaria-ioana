@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity\Admin;
 
-use AppBundle\Admin\PictureAdmin;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -47,7 +47,7 @@ class Subcategory
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Picture", mappedBy="subcategory", cascade={"persist"})
      */
-    protected $pictureSubCat;
+    public $picture;
 
     /**
      * @var datetime
@@ -200,20 +200,28 @@ class Subcategory
      */
     public function getPicture()
     {
-        return $this->pictureSubCat;
+        return $this->picture;
     }
 
-    public function addPictureSubCat(Picture $picture)
+    /**
+     * @param Picture $picture
+     */
+    public function addPicture(\AppBundle\Entity\Admin\Picture $picture)
     {
         $picture->setSubcategory($this);
 
-        $this->pictureSubCat->add($picture);
+        $this->picture->add($picture);
     }
 
-    public function removePictureSubCat(Picture $picture)
+    /**
+     * @param Picture $picture
+     */
+    public function removePicture(\AppBundle\Entity\Admin\Picture $picture)
     {
-        $this->pictureSubCat->removeElement($picture);
+        $this->picture->removeElement($picture);
     }
+
+
 
 }
 

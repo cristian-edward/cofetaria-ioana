@@ -6,7 +6,7 @@
         <th>{% block name %}{{ admin.trans(field_description.label) }}{% endblock %}</th>
 
         <td>
-            {% if object.picture is iterable %}
+            {% if object.picture is defined and object.picture is empty  %}
                 <section class="section-white">
                         <div class="container">
 
@@ -47,6 +47,6 @@
                 <img src="{{ object.webPath | imagine_filter('admin_product_image') }}" alt="{{ object.name }}" title="{{ object.name }}" class="img-responsive" />
             {% endif %}
         </td>
-
+{{ dump(object.picture) }}
 
 {% endblock %}

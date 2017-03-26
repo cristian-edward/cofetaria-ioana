@@ -1,0 +1,30 @@
+{
+  "name": "cofetaria-ioana",
+  "version": "1.0.0",
+  "description": "cofetaria-ioana ===============",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.1.2",
+    "gulp-uglifycss": "^1.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristian-edward/cofetaria-ioana.git"
+  },
+  "author": "Cristian Edward",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristian-edward/cofetaria-ioana/issues"
+  },
+  "homepage": "https://github.com/cristian-edward/cofetaria-ioana#readme"
+}

@@ -42,9 +42,6 @@ class ProductAdmin extends AbstractAdmin
                 ->end()
 //            ->end()
         ;
-        //TODO de intrate si vazut cu se face handled pentru imaginea uplodata
-//        https://sonata-project.org/bundles/admin/2-3/doc/cookbook/recipe_file_uploads.html
-
 
     }
 

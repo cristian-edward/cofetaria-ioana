@@ -10,10 +10,23 @@
 
     {# stylesheet #}
     {% block stylesheets %}
-        {% stylesheets
-        'css/app.css' filter='cssrewrite' %}
-        <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
-        {% endstylesheets %}
+       {# {% stylesheets
+        'assets/css/uikit.min.css'
+        'assets/css/components/slideshow.min.css'
+        'assets/css/components/slidenav.min.css'
+        'assets/css/components/dotnav.min.css'
+        'assets/css/components/slider.min.css'
+        'assets/css/style.css'
+        'assets/css/responsive.css'
+        'assets/css/skins/red.css'
+        'assets/css/bootstrap.min.css'
+        'assets/css/theme/theme.css'
+        'assets/css/theme/theme-elements.css'
+        'assets/css/default.css'
+        'assets/css/app.css' filter='cssrewrite' %}
+
+        {% endstylesheets %}#}
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}" />
     {% endblock %}
 </head>
 <body  id="impx-body">
@@ -24,13 +37,30 @@
     </div>
 
     {# javascript #}
-    {% javascripts
-    'js/app.js'
+    {#{% javascripts "assets/js/jquery.js"
+    "assets/js/uikit.min.js"
+    "assets/js/components/parallax.min.js"
+    "assets/js/components/sticky.min.js"
+    "assets/js/components/slider.min.js"
+    "assets/js/components/slideshow.min.js"
+    "assets/js/rating.js"
+    "assets/js/price-range.js"
+    "assets/js/jquery.countdown.min.js"
+    "assets/js/jquery.countTo.js"
+    "assets/js/config.js"
+    "assets/js/gmaps.js"
+    "assets/js/config-contact.js"
+    'assets/js/jquery-3.1.1.min.js'
+    'assets/js/bootstrap.min.js'
+    'assets/js/theme/jquery.magnific-popup.min.js'
+    'assets/js/theme/theme.js'
+    'assets/js/theme/view.home.js'
+    'assets/js/theme/theme.init.js'
      %}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {% block javascripts %}
 
+    {% endjavascripts %}#}
+    {% block javascripts %}
+        <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('assets/js/app.js') }}"></script>
 
     {% endblock %}

@@ -84,7 +84,7 @@ class Picture
     protected $product;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Subcategory", inversedBy="pictureSubCat", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Admin\Subcategory", inversedBy="picture", cascade={"persist"})
      * @ORM\JoinColumn(name="subcategory_id", referencedColumnName="id")
      */
     protected $subcategory;
@@ -453,7 +453,7 @@ class Picture
         return $this->subcategory;
     }
 
-    public function setSubcategory(Subcategory $subcategory)
+    public function setSubcategory(\AppBundle\Entity\Admin\Subcategory $subcategory)
     {
         $this->subcategory = $subcategory;
 
