@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class DefaultController extends Controller
 {
@@ -28,12 +29,18 @@ class DefaultController extends Controller
             ->leftJoin('p.weightId', 'w')
             ->orderBy('p.title', 'ASC');*/
 
-        $qb -> select(array('c','s'))
-            ->from('AppBundle:Admin\Category', 'c')
-            ->leftJoin('c.subcategory', 's');
+        $qb->from('AppBundle:Admin\Category', 'c')
+            ->select(array('c', 's', 'p'))
+            ->leftJoin('c.subcategory', 's')
+            ->leftJoin('s.picture', 'p');
+
         $categorii  = $qb->getQuery()->getArrayResult();
         $columns = $em->getRepository('AppBundle:Admin\Category')->findAll();
 
+        $datetime = new DateTime();
+
+        #dump($categorii);
+        #dump($columns);
         // replace this example code with whatever you need
         return $this->render(':frontEnd/index:index.html.twig',['categorii' => $categorii, 'produse' => $columns]);
 
@@ -52,9 +59,11 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $qb = $em->createQueryBuilder();
-        $qb -> select(array('c','s'))
-            ->from('AppBundle:Admin\Category', 'c')
-            ->leftJoin('c.subcategory', 's');
+        $qb->from('AppBundle:Admin\Category', 'c')
+            ->select(array('c', 's', 'p'))
+            ->leftJoin('c.subcategory', 's')
+            ->leftJoin('s.picture', 'p');
+
         $categorii  = $qb->getQuery()->getArrayResult();
 
         return $this->render(':frontEnd/showProducts:index.html.twig', ['categorii' => $categorii]);
@@ -67,6 +76,5 @@ class DefaultController extends Controller
     {
         return $this->render(':frontEnd:home.html.twig');
     }
-
 
 }

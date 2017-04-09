@@ -45,7 +45,7 @@ class Subcategory
     protected $category;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Picture", mappedBy="subcategory", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Admin\Picture", mappedBy="subcategory", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     public $picture;
 
@@ -203,10 +203,15 @@ class Subcategory
         return $this->picture;
     }
 
+    public function setPicture($picture)
+    {
+        return $this->picture = $picture;
+    }
+
     /**
      * @param Picture $picture
      */
-    public function addPicture(\AppBundle\Entity\Admin\Picture $picture)
+    public function addPicture(\AppBundle\Entity\Admin\Picture $picture = null)
     {
         $picture->setSubcategory($this);
 
@@ -218,6 +223,7 @@ class Subcategory
      */
     public function removePicture(\AppBundle\Entity\Admin\Picture $picture)
     {
+
         $this->picture->removeElement($picture);
     }
 

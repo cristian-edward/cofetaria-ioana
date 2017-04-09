@@ -83,7 +83,7 @@
                                                                         <span class="dropdown-mega-sub-title">{{ categorie.name|trans }}</span>
                                                                         <ul class="dropdown-mega-sub-nav">
                                                                             {% for subcategorie in categorie.subcategory %}
-                                                                                <li><a href="{{ '/' ~ app.request.getLocale() ~ '/' ~ categorie.link ~ '/' ~ subcategorie.link  }}" data-thumb-preview="http://placehold.it/100x100">{{ subcategorie.name|trans }}</a></li>
+                                                                                <li><a href="{{ '/' ~ app.request.getLocale() ~ '/' ~ categorie.link ~ '/' ~ subcategorie.link  }}" data-thumb-preview="{% for picture in subcategorie.picture %}{% if loop.first %}{{ asset('media/cache/frontEnd_menu/assets/images/uploads/products/'~picture.path) }}{% endif %}{% endfor %}">{{ subcategorie.name|trans }}</a></li>
                                                                             {% endfor %}
                                                                         </ul>
                                                                     </div>

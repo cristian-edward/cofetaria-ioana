@@ -9,15 +9,12 @@
 namespace AppBundle\Admin;
 
 use Doctrine\ORM\EntityRepository;
-use Proxies\__CG__\AppBundle\Entity\Admin\Category;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Form\Type\Filter\ChoiceType;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\AdminBundle\Route\RouteCollection;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 
 class SubcategoryAdmin extends AbstractAdmin
 {
@@ -25,6 +22,7 @@ class SubcategoryAdmin extends AbstractAdmin
     protected $baseRouteName = 'admin-subcategory';
     protected $baseRoutePattern = 'admin-subcategory';
     protected $translationDomain = 'SonataPageBundle';
+
 
     #These lines configure which fields are displayed on the edit and create actions. The FormMapper behaves similar to the FormBuilder of the Symfony Form component;
     // Fields to be shown on create/edit forms
@@ -41,6 +39,11 @@ class SubcategoryAdmin extends AbstractAdmin
             ->with('Photo', ['class' => 'col-md-4'])
                 ->add('picture', 'entity', [
                     'class' => 'AppBundle\Entity\Admin\Picture',
+                    'query_builder' => function (EntityRepository $entityRepository){
+                        return $entityRepository->createQueryBuilder('s')
+                            ->where('s.filter = :filter')
+                            ->setParameter('filter', 'frontEnd_menu');
+                    },
                     'multiple' => true,
                     'expanded' => false,
                     'by_reference' => false,
@@ -83,4 +86,8 @@ class SubcategoryAdmin extends AbstractAdmin
             ->add('link');
 
     }
+
+
+
+
 }

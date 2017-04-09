@@ -1,52 +1,66 @@
 {% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
 
+{# base_list_field.html.twig -> aici se duc datele #}
 {% block field %}
 {# | imagine_filter('gallery_element_admin')  de citit  #}
 
         <th>{% block name %}{{ admin.trans(field_description.label) }}{% endblock %}</th>
 
         <td>
-            {% if object.picture is defined and object.picture is empty  %}
-                <section class="section-white">
-                        <div class="container">
+            {% if object.webPath is defined %}
 
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    {% for picture in object.picture %}
-                                        <li data-target="#carousel-example-generic" data-slide-to="{{ picture.id }}" {% if loop.first %}class="active"{% endif %}></li>
-                                    {% endfor %}
-                                </ol>
-
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner">
-                                    {% for picture in object.picture %}
-                                        <div class="item {% if loop.first %}active{% endif %}">
-                                            <img src="{{ asset(picture.webPath) | imagine_filter('admin_product_image') }}" alt="{{ picture.seoLink }}" />
-                                            <div class="carousel-caption">
-                                                <h2>{{ picture.name }}</h2>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-
-                                <!-- Controls -->
-                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left"></span>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </section>
-
+                 <img src="{{ object.webPath | imagine_filter('admin_product_image') }}" alt="{{ object.name }}" title="{{ object.name }}" />
 
             {% else %}
-                <img src="{{ object.webPath | imagine_filter('admin_product_image') }}" alt="{{ object.name }}" title="{{ object.name }}" class="img-responsive" />
+                {% set break = true %}
+                {% for picture in object.picture %}
+
+                    {% if loop.length > 1 and break %}
+
+                        <section class="section-white">
+                            <div class="container">
+
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        {% for picture in object.picture %}
+                                            <li data-target="#carousel-example-generic" data-slide-to="{{ picture.id }}" {% if loop.first %}class="active"{% endif %}></li>
+                                        {% endfor %}
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner">
+                                        {% for picture in object.picture %}
+                                            <div class="item {% if loop.first %}active{% endif %}">
+                                                <img src="{{ asset(picture.webPath) | imagine_filter('admin_product_image') }}" alt="{{ picture.seoLink }}" title="{{ picture.seoLink }}" />
+                                                <div class="carousel-caption">
+                                                    <h2>{{ picture.name }}</h2>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <!-- Controls -->
+                                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </section>
+                        {% set break = false %}
+                    {% elseif loop.length == 1 %}
+
+                        <img src="{{ asset(picture.webPath) | imagine_filter('admin_product_image') }}" alt="{{ picture.seoLink }}" title="{{ picture.seoLink }}" />
+
+                    {% endif %}
+                {% endfor %}
             {% endif %}
+
         </td>
-{{ dump(object.picture) }}
+
 
 {% endblock %}
