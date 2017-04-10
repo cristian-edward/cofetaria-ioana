@@ -11,6 +11,8 @@ use Symfony\Component\Validator\Constraints\DateTime;
 
 class DefaultController extends Controller
 {
+
+
     /**
      * @Route("/{_locale}", name="homepage", defaults={"_locale":"ro"}, requirements={"_locale":"%app.locales%"})
      */
@@ -21,28 +23,9 @@ class DefaultController extends Controller
            http://symfony.com/doc/current/routing/requirements.html
 
         */
-        $em = $this->getDoctrine()->getManager();
-        $qb = $em->createQueryBuilder();
-        /*$qb -> select(array('p','c','w'))
-            ->from('AppBundle:Admin\Product', 'p')
-            ->leftJoin('p.categoryId', 'c')
-            ->leftJoin('p.weightId', 'w')
-            ->orderBy('p.title', 'ASC');*/
 
-        $qb->from('AppBundle:Admin\Category', 'c')
-            ->select(array('c', 's', 'p'))
-            ->leftJoin('c.subcategory', 's')
-            ->leftJoin('s.picture', 'p');
-
-        $categorii  = $qb->getQuery()->getArrayResult();
-        $columns = $em->getRepository('AppBundle:Admin\Category')->findAll();
-
-        $datetime = new DateTime();
-
-        #dump($categorii);
-        #dump($columns);
         // replace this example code with whatever you need
-        return $this->render(':frontEnd/index:index.html.twig',['categorii' => $categorii, 'produse' => $columns]);
+        return $this->render(':frontEnd/index:index.html.twig');
 
     }
 
@@ -75,6 +58,21 @@ class DefaultController extends Controller
     public function contactAction(Request $request, $_locale)
     {
         return $this->render(':frontEnd:home.html.twig');
+    }
+
+
+    public function showMenuAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder();
+        $qb->from('AppBundle:Admin\Category', 'c')
+            ->select(array('c', 's', 'p'))
+            ->leftJoin('c.subcategory', 's')
+            ->leftJoin('s.picture', 'p');
+
+        $categorii  = $qb->getQuery()->getArrayResult();
+        $columns = $em->getRepository('AppBundle:Admin\Category')->findAll();
+        return $this->render(':frontEnd/index:menu.html.twig',['categorii' => $categorii, 'produse' => $columns, '_locale' => 'ro']);
     }
 
 }
